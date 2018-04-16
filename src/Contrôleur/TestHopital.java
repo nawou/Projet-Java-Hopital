@@ -13,12 +13,12 @@ import Modele.Connexion;
  *
  * @author nawellalioui
  */
-public class TestHopital {
+public class TestHopital { 
     
     public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
     Connexion cn;
-    cn = new Connexion("Hopital","root","root");
+    cn = new Connexion("hopital","root","");
     }
 
 
