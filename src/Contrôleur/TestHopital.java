@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package Contrôleur;
+import java.sql.*;
+
+import Modele.Connexion;
+
 
 /**
  *
@@ -11,4 +15,13 @@ package Contrôleur;
  */
 public class TestHopital {
     
+    public static void main(String[] args) throws SQLException, ClassNotFoundException{
+    //Connexion cn = new Connexion(); 
+    Connexion cn;
+    cn = new Connexion("Hopital","root","root");
+    }
+
+
 }
+
+    

@@ -49,20 +49,40 @@ public class Connexion {
      * @param passwordDatabase
      * @throws java.sql.SQLException
      * @throws java.lang.ClassNotFoundException
+     
+  
      */
-    public Connexion(String nameDatabase, String loginDatabase, String passwordDatabase) throws SQLException, ClassNotFoundException {
+   public Connexion(String nameDatabase, String loginDatabase, String passwordDatabase) throws SQLException, ClassNotFoundException {
         // chargement driver "com.mysql.jdbc.Driver"
         Class.forName("com.mysql.jdbc.Driver");
-
+        System.out.println("Driver ok");
         // url de connexion "jdbc:mysql://localhost:3305/usernameECE"
-        String urlDatabase = "jdbc:mysql://localhost/" + nameDatabase;
-
+        String urlDatabase = "jdbc:mysql://localhost:8888/" + nameDatabase;
+       
         //création d'une connexion JDBC à la base 
         conn = DriverManager.getConnection(urlDatabase, loginDatabase, passwordDatabase);
-
+        System.out.println("Connexion ok");
+       
         // création d'un ordre SQL (statement)
         stmt = conn.createStatement();
+         
     }
+    
+   
+    
+    /*public Connexion(){
+        try{ 
+        Class.forName("com.mysql.jdbc.Driver");
+        System.out.println("Driver ok");
+        String url = "jdbc:mysql://127.0.0.1:8888/Hopital";
+        String user = "root";
+        String password = "root";
+        Connection cn = DriverManager.getConnection(url, user, password);
+        System.out.println("Connexion réussie !");
+        }catch(Exception e){
+            e.printStackTrace():}
+    }
+    
 
     /**
      * Constructeur avec 4 paramètres : username et password ECE, login et
@@ -74,7 +94,7 @@ public class Connexion {
      * @throws java.sql.SQLException
      * @throws java.lang.ClassNotFoundException
      */
-    public Connexion(String usernameECE, String passwordECE, String loginDatabase, String passwordDatabase) throws SQLException, ClassNotFoundException {
+    /*public Connexion(String usernameECE, String passwordECE, String loginDatabase, String passwordDatabase) throws SQLException, ClassNotFoundException {
         // chargement driver "com.mysql.jdbc.Driver"
         Class.forName("com.mysql.jdbc.Driver");
 
@@ -94,7 +114,7 @@ public class Connexion {
             stmt = conn.createStatement();
 
         }
-    }
+    }*/
 
     /**
      * Méthode qui ajoute la table en parametre dans son ArrayList
