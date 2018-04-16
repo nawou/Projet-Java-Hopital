@@ -15,11 +15,11 @@ import Modele.Connexion;
  */
 public class TestHopital { 
     
-    public static void main(String[] args) throws SQLException, ClassNotFoundException{
+    //public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
-    Connexion cn;
-    cn = new Connexion("hopital","root","");
-    }
+    //Connexion cn;
+    //cn = new Connexion("hopital","root","");
+   // }
 
 
 }
