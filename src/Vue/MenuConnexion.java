@@ -19,9 +19,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class MenuConnexion extends JFrame{
+public class MenuConnexion extends JFrame implements ActionListener{
 
-    public JButton connexionLoc, connexionECE;
+    public JButton connexionLoc, connexionECE, quitter;
   
     /**
      * Constructeur qui initialise tous les objets graphiques de la fenetre
@@ -78,17 +78,46 @@ public class MenuConnexion extends JFrame{
     //connexionECE2.addActionListener(this);
     panel.add(connexionECE);
     
+    quitter = new JButton("Connexion distante (momentanément indisponible)");
+    quitter.setFont(f); 
+    quitter.setBackground(Color.LIGHT_GRAY);
+    quitter.setOpaque(true);
+    quitter .setBorderPainted(false);
+    quitter .setAlignmentX(Component.CENTER_ALIGNMENT);
+    quitter .setPreferredSize(new Dimension(50, 10));
+    panel.add(Box.createRigidArea(new Dimension(0, 25)));
+    //connexionECE2.addActionListener(this);
+    panel.add(quitter);
+    
+    
     
     panel.add(Box.createRigidArea(new Dimension(0, 25)));
     panel.add(Box.createRigidArea(new Dimension(0, 25)));
     
-    ImageIcon image = new ImageIcon("src/images/image1bis.png");
+    ImageIcon image = new ImageIcon("src/images/image2.png");
     JLabel label1 = new JLabel("", image, JLabel.CENTER);
     label1.setAlignmentX(Component.CENTER_ALIGNMENT);
     panel.add(label1);
 
+    connexionLoc.addActionListener(this);
+    quitter.addActionListener(this);
     
     return panel;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+       Object source = e.getSource();
+       if(source == connexionLoc) {
+       super.dispose(); 
+       FenetreConnexionLocale fen = new FenetreConnexionLocale();
+    }
+    
+    else if (source == quitter){
+        super.dispose(); 
+      
+        
+    }
     }
 
 }

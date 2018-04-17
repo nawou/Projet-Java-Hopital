@@ -2,17 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
-            <file>file:/C:/Users/clara/Projet-Java-Hopital/src/Modele/Mise_a_jour.java</file>
-            <file>file:/C:/Users/clara/Projet-Java-Hopital/src/Modele/Connexion.java</file>
-            <file>file:/C:/Users/clara/Projet-Java-Hopital/src/Vue/MenuGraphique.java</file>
-            <file>file:/C:/Users/clara/Projet-Java-Hopital/src/Modele/Reporting.java</file>
-            <file>file:/C:/Users/clara/Projet-Java-Hopital/src/Contrôleur/TestHopital.java</file>
-            <file>file:/C:/Users/clara/Projet-Java-Hopital/src/Modele/Recherche.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Vue/MenuConnexion.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Contrôleur/TestHopital.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Vue/FenetreConnexionLocale.java</file>
         </group>
-=======
-        <group/>
->>>>>>> 3a905da3e5587dab06005811441675839eb66d6d
     </open-files>
 </project-private>

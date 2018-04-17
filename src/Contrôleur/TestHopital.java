@@ -7,6 +7,7 @@ package Contrôleur;
 import java.sql.*;
 
 import Modele.Connexion;
+import Vue.FenetreConnexionLocale;
 import Vue.MenuConnexion;
 
 
@@ -16,26 +17,22 @@ import Vue.MenuConnexion;
  */
 public class TestHopital { 
     
-<<<<<<< HEAD
+
     //public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
     //Connexion cn;
     //cn = new Connexion("hopital","root","");
-   // }
-
-=======
-    
-
+   //
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
     Connexion cn;
     cn = new Connexion("Hopital","root","root");
     MenuConnexion mconnexion = new MenuConnexion();
+    //FenetreConnexionLocale fe = new FenetreConnexionLocale();
     
     }
-   
->>>>>>> 3a905da3e5587dab06005811441675839eb66d6d
+
 
 }
 
