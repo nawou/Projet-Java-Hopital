@@ -16,17 +16,6 @@ import Vue.MenuConnexion;
  */
 public class TestHopital { 
     
-
-    //public static void main(String[] args) throws SQLException, ClassNotFoundException{
-    //Connexion cn = new Connexion(); 
-    //Connexion cn;
-    //cn = new Connexion("hopital","root","");
-   // }
-
-
-    
-
-
     //public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
     //Connexion cn;

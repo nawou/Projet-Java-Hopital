@@ -20,11 +20,7 @@ import java.sql.*;
 public class Recherche {
     public static void main(String[] args){
         
-    
-    
-    
-    
-        try{
+        try {
         
        
         // chargement driver "com.mysql.jdbc.Driver"
