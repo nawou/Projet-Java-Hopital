@@ -78,7 +78,7 @@ public class MenuConnexion extends JFrame implements ActionListener{
     //connexionECE2.addActionListener(this);
     panel.add(connexionECE);
     
-    quitter = new JButton("Connexion distante (momentanément indisponible)");
+    quitter = new JButton("Quitter");
     quitter.setFont(f); 
     quitter.setBackground(Color.LIGHT_GRAY);
     quitter.setOpaque(true);

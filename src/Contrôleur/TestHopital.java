@@ -19,7 +19,7 @@ public class TestHopital {
     public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
     Connexion cn;
-    cn = new Connexion("hopital","root","");
+    cn = new Connexion("Hopital","root","root");
     MenuConnexion mconnexion = new MenuConnexion();
     //FenetreConnexionLocale fe = new FenetreConnexionLocale();
     

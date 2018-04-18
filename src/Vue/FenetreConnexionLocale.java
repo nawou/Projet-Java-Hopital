@@ -125,7 +125,7 @@ public class FenetreConnexionLocale extends JFrame implements ActionListener{
         Object source = evt.getSource();
        if(source == retourMenu) {
        super.dispose(); 
-       FenetreConnexionLocale fen = new FenetreConnexionLocale();
+       MenuConnexion fen = new MenuConnexion();
     }
     
        else if (source == connect){
