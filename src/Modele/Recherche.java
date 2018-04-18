@@ -17,6 +17,7 @@ import java.sql.*;
  *
  * @author clara
  */
+/*
 public class Recherche {
     public static void main(String[] args){
         
@@ -59,4 +60,4 @@ System.out.println("Connexion ok");
     
 
 }
-}
+}*/
