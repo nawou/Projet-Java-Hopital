@@ -52,7 +52,7 @@ public class Connexion {
      
   
      */
-   public Connexion(String nameDatabase, String loginDatabase, String passwordDatabase) throws SQLException, ClassNotFoundException {
+        public Connexion(String nameDatabase, String loginDatabase, String passwordDatabase) throws SQLException, ClassNotFoundException {
         // chargement driver "com.mysql.jdbc.Driver"
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Driver ok");
@@ -66,6 +66,10 @@ public class Connexion {
         // création d'un ordre SQL (statement)
         stmt = conn.createStatement();
          
+    }
+
+    Connexion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
    
@@ -121,10 +125,11 @@ public class Connexion {
      *
      * @param table
      */
-    public void ajouterTable(String table) {
+    
+   
+   public void ajouterTable(String table) {
         tables.add(table);
     }
-
     /**
      * Méthode qui ajoute la requete de selection en parametre dans son
      * ArrayList
@@ -230,4 +235,11 @@ public class Connexion {
     public void executeUpdate(String requeteMaj) throws SQLException {
         stmt.executeUpdate(requeteMaj);
     }
+
+    public Statement createStatement() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+ 
+    
 }

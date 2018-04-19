@@ -32,7 +32,7 @@ public class MenuConnexion extends JFrame implements ActionListener{
         super("Gestion informatique d'un centre hospitalier");
         setSize(700,600);  //taille
         setLocationRelativeTo(null); //on centre la fenêtre
-        setResizable(true); //On autorise le redimensionnement
+        setResizable(false); //On autorise le redimensionnement
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //pour quitter lors du clic sur la croix
         setContentPane(MessageBienvenue());
         setVisible(true);

@@ -130,8 +130,10 @@ public class FenetreConnexionLocale extends JFrame implements ActionListener{
     
        else if (source == connect){
         try{
-            maconnexion = new Connexion(text_BDD.getText(), text_login.getText(), text_pass.getText());
+             maconnexion = new Connexion(text_BDD.getText(), text_login.getText(), text_pass.getText());
+             super.dispose();
              JOptionPane.showMessageDialog(null, "Connexion réussie !");
+             FenChoixModule fen = new FenChoixModule ();
         }catch(Exception e){ JOptionPane.showMessageDialog(null, e);}
                            
         
