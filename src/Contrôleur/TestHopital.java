@@ -14,7 +14,7 @@ import Vue.FenetreConnexionLocale;
 import Vue.MenuConnexion;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import Vue.FenetreRecherche;
 
 
 /**
@@ -27,7 +27,7 @@ public class TestHopital {
     ResultSet myRs = null;
     public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
-
+MenuConnexion mconnexion = new MenuConnexion();
  /** Connexion cn;
     cn = new Connexion("Hopital","root","");
     MenuConnexion mconnexion = new MenuConnexion();
