@@ -93,7 +93,7 @@ public class FenChoixModule extends JFrame implements ActionListener {
         add(p0);
         //Mise en forme des boutons
         
-        
+moduleRecherche.addActionListener(this);
         
     }
     
@@ -104,6 +104,7 @@ public class FenChoixModule extends JFrame implements ActionListener {
        if(source == moduleRecherche) {
        super.dispose(); 
        FenetreRecherche fen2= new FenetreRecherche();
+       
     }
     
        
