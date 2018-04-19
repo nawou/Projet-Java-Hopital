@@ -27,7 +27,7 @@ public class Recherche {
     ArrayList<String> arr;
 
 public Recherche() throws ClassNotFoundException, SQLException{
-    cn = new Connexion("Hopital", "root", "root");
+    cn = new Connexion("Hopital", "root", "");
 }
 
 

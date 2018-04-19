@@ -12,6 +12,7 @@ import Vue.FenChoixModule;
 import Vue.FenetreConnexionLocale;
 import Vue.MenuConnexion;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 
@@ -68,7 +69,11 @@ public class TestHopital {
           }*/
 
       Recherche rech = new Recherche();
-      ArrayList r = rech.rechercherInfirmier("NUIT");
+      Scanner sc = new Scanner(System.in);
+      
+      //L'utilisateur choisi lui meme les possibilités ( à reproduire dans un Jtextfield! mais attention blindage !!
+      String rot= sc.nextLine();
+      ArrayList r = rech.rechercherInfirmier(rot);
       for (int i = 0; i < r.size(); i++){
               System.out.print(r.get(i));
           }
