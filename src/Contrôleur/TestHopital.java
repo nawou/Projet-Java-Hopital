@@ -27,6 +27,13 @@ public class TestHopital {
     ResultSet myRs = null;
     public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
+
+    //Connexion cn;
+    //cn = new Connexion("Hopital","root","");
+    //MenuConnexion mconnexion = new MenuConnexion();
+    //FenetreConnexionLocale fe = new FenetreConnexionLocale();
+    //System.out.println(afficherAttribut("medecin"));
+
    
     
     //Connexion cn;
@@ -82,6 +89,7 @@ public class TestHopital {
          // }
      
     
+
     }
 
 }
