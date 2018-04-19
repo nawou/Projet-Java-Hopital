@@ -29,7 +29,7 @@ public class TestHopital {
     
     //Connexion cn;
     //cn = new Connexion("Hopital","root","root");
-    //MenuConnexion mconnexion = new MenuConnexion();
+    MenuConnexion mconnexion = new MenuConnexion();
     //FenetreConnexionLocale fe = new FenetreConnexionLocale();
     //FenChoixModule fen = new FenChoixModule();
     /*try {
