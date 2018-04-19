@@ -7,6 +7,7 @@ package Contrôleur;
 import java.sql.*;
 
 import Modele.Connexion;
+import Modele.Mise_a_jour;
 import Modele.Recherche;
 import Vue.FenChoixModule;
 import Vue.FenetreConnexionLocale;
@@ -32,6 +33,14 @@ public class TestHopital {
     MenuConnexion mconnexion = new MenuConnexion();
     //FenetreConnexionLocale fe = new FenetreConnexionLocale();
     //System.out.println(afficherAttribut("medecin"));
+=======
+    //Connexion cn;
+    //cn = new Connexion("Hopital","root","");
+    //MenuConnexion mconnexion = new MenuConnexion();
+    //FenetreConnexionLocale fe = new FenetreConnexionLocale();
+    //System.out.println(afficherAttribut("medecin"));
+
+>>>>>>> 663819a7a50118550d2426facde8bbbaab6a8538
    
     */
     //Connexion cn;
@@ -75,9 +84,11 @@ public class TestHopital {
           }*/
 
       Recherche rech = new Recherche();
+      Mise_a_jour maj= new Mise_a_jour();
       Scanner sc = new Scanner(System.in);
       
       //L'utilisateur choisi lui meme les possibilités ( à reproduire dans un Jtextfield! mais attention blindage !!
+
       /**
         //Rechercher un docteur 
       String spe= sc.nextLine();
@@ -144,6 +155,19 @@ public class TestHopital {
               System.out.println(r7.get(i));
           } 
 }
+/**
+      String nom = sc.nextLine();
+      maj.DeleteEmploye(nom);
+      //ArrayList r = rech.rechercherInfirmier(rot);
+      //for (int i = 0; i < r.size(); i++){
+              //System.out.print(r.get(i));
+         // }
+     
+    
+
+    }
+
+*/
 }
 
 
