@@ -5,6 +5,8 @@
  */
 package Vue;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author clara
@@ -15,8 +17,12 @@ public class FenetreRecherche extends javax.swing.JFrame {
      * Creates new form FenetreRecherche
      */
     public FenetreRecherche() {
+        super("Gestion informatique d'un centre hospitalier");
         initComponents();
-         setVisible(true);
+        setLocationRelativeTo(null); //on centre la fenêtre
+        setResizable(false); //On autorise le redimensionnement
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //pour quitter lors du clic sur la croix
+        setVisible(true);
     }
 
     /**
@@ -28,6 +34,7 @@ public class FenetreRecherche extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToolBar1 = new javax.swing.JToolBar();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
@@ -39,9 +46,11 @@ public class FenetreRecherche extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
+        jToolBar1.setRollover(true);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jRadioButton1.setText("Recherche d'un Service (Nom du Service, Batiments, Directeurs)");
+        jRadioButton1.setText("Recherche d'un Service (Nom du Service, Bâtiments, Directeurs)");
 
         jRadioButton2.setText("Recherche d'Infirmiers");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +73,7 @@ public class FenetreRecherche extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton5.setText("Recherche d'Employes");
+        jRadioButton5.setText("Recherche d'Employés");
         jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton5ActionPerformed(evt);
@@ -85,14 +94,14 @@ public class FenetreRecherche extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton8.setText("Recherche personnes ayant été soignées dans le passé");
+        jRadioButton8.setText("Recherche de personnes ayant été soignées dans le passé");
         jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton8ActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Veuillez choisir ou vous souhaitez faire votre recherche:");
+        jLabel1.setText("Veuillez choisir où vous souhaitez faire votre recherche:");
 
         jButton1.setText("Retour");
 
@@ -103,11 +112,16 @@ public class FenetreRecherche extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton6)
-                    .addComponent(jRadioButton7)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
-                .addGap(268, 268, 268))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton6)
+                            .addComponent(jRadioButton3)
+                            .addComponent(jRadioButton7)
+                            .addComponent(jRadioButton2))
+                        .addGap(254, 254, 254))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(115, 115, 115))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -116,19 +130,15 @@ public class FenetreRecherche extends javax.swing.JFrame {
                             .addComponent(jRadioButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jRadioButton5)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(jRadioButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(123, 123, 123)
-                        .addComponent(jRadioButton8)))
-                .addGap(0, 122, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(303, 303, 303)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jRadioButton8))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(271, 271, 271)
+                        .addComponent(jButton1)))
+                .addGap(0, 142, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,5 +213,6 @@ public class FenetreRecherche extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }

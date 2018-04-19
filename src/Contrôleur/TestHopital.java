@@ -10,6 +10,7 @@ import Modele.Connexion;
 import Modele.Mise_a_jour;
 import Modele.Recherche;
 import Vue.FenChoixModule;
+import Vue.FenRService;
 import Vue.FenetreConnexionLocale;
 import Vue.MenuConnexion;
 import java.util.ArrayList;
@@ -27,7 +28,8 @@ public class TestHopital {
     ResultSet myRs = null;
     public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
-MenuConnexion mconnexion = new MenuConnexion();
+//MenuConnexion mconnexion = new MenuConnexion();
+   FenRService fen = new FenRService();
  /** Connexion cn;
     cn = new Connexion("Hopital","root","");
     MenuConnexion mconnexion = new MenuConnexion();
@@ -45,7 +47,6 @@ MenuConnexion mconnexion = new MenuConnexion();
     */
     //Connexion cn;
     //cn = new Connexion("Hopital","root","root");
-    MenuConnexion mconnexion = new MenuConnexion();
     //FenetreConnexionLocale fe = new FenetreConnexionLocale();
     //FenChoixModule fen = new FenChoixModule();
     /*try {

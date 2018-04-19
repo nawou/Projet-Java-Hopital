@@ -3,15 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/smahe/Projet-Java-Hopital/src/Modele/Recherche.java</file>
-            <file>file:/C:/Users/smahe/Projet-Java-Hopital/src/Modele/Connexion.java</file>
-            <file>file:/C:/Users/smahe/Projet-Java-Hopital/src/Modele/AffichageBDD.java</file>
-            <file>file:/C:/Users/smahe/Projet-Java-Hopital/src/Modele/Docteur.java</file>
-            <file>file:/C:/Users/smahe/Projet-Java-Hopital/src/Vue/FenetreBDD.java</file>
-            <file>file:/C:/Users/smahe/Projet-Java-Hopital/src/Contrôleur/TestHopital.java</file>
-            <file>file:/C:/Users/smahe/Projet-Java-Hopital/src/Vue/MenuConnexion.java</file>
-            <file>file:/C:/Users/smahe/Projet-Java-Hopital/src/Modele/Mise_a_jour.java</file>
-            <file>file:/C:/Users/smahe/Projet-Java-Hopital/src/Vue/FenetreConnexionLocale.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Modele/Recherche.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Modele/Mise_a_jour.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Vue/FenetreRecherche.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Contrôleur/TestHopital.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Vue/FenetreConnexionLocale.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Vue/FenChoixModule.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Modele/Soigne.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Modele/Reporting.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Vue/MenuConnexion.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Modele/Connexion.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Modele/Infirmier.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Modele/Service.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Modele/Hospitalisation.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Modele/Employe.java</file>
+            <file>file:/Users/nawellalioui/NetBeansProjects/Hopital_Lalioui_Maherzi_Tromelin/src/Vue/FenetreBDD.java</file>
         </group>
     </open-files>
 </project-private>

@@ -89,7 +89,7 @@ public class FenChoixModule extends JFrame implements ActionListener {
         p0.add(Box.createRigidArea(new Dimension(0, 50)));
         p0.add( moduleReporting);
        
-        
+        moduleRecherche.addActionListener(this);
         add(p0);
         //Mise en forme des boutons
         
