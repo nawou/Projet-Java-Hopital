@@ -160,9 +160,13 @@ public class FenetreRecherche extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-        // TODO add your handling code here:
+       Object source = evt.getSource();
+       if(source == jRadioButton4) {
+       super.dispose(); 
+       FenRMalade fenMalade= new FenRMalade();  // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton4ActionPerformed
-
+    }
+    
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton5ActionPerformed
