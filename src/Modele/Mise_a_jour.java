@@ -5,34 +5,27 @@
  */
 package Modele;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author clara
  */
 public class Mise_a_jour {
     
-    private Connexion connect;
-    private void remplirRequetesMaj() {
-        // Requêtes d'insertion
-        connect.ajouterRequeteMaj("INSERT INTO Dept (deptno,dname,loc) VALUES (50,'ECE','Paris');");
-
-        // Requêtes de modification
-        //connect.ajouterRequeteMaj("UPDATE Dept SET loc='Eiffel' WHERE loc='Paris';");
-
-        // Requêtes de suppression
-        //connect.ajouterRequeteMaj("DELETE FROM Dept WHERE loc='Eiffel';");
+      Connexion cn;
+      String query;
+      
+      public void Mise_a_jour() throws ClassNotFoundException, SQLException{
+        cn = new Connexion("Hopital", "root", "");
+}
+      public void DeleteEmploye (String nom){
+              
+      query = "DELETE FROM employe WHERE true";
+     if (!nom.equals("")){query+=" AND nom ='" + nom + "'";}
+     
+      try {System.out.print(query);
+          cn.executeUpdate(query);}catch(SQLException e)
+      {e.printStackTrace();}
     }
-     private void remplirTables() {
-         
-        connect.ajouterTable("Emp");
-        connect.ajouterTable("Dept");
-        connect.ajouterTable("Mission");
-    }
-        
-    public void afficherTables() {
-        for (String table : connect.tables) {
-            System.out.println(table);
-        }
-    }
-
 }
