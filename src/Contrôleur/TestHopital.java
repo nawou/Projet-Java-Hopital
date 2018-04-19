@@ -45,7 +45,7 @@ MenuConnexion mconnexion = new MenuConnexion();
     */
     //Connexion cn;
     //cn = new Connexion("Hopital","root","root");
-    MenuConnexion mconnexion = new MenuConnexion();
+   // MenuConnexion mconnexion = new MenuConnexion();
     //FenetreConnexionLocale fe = new FenetreConnexionLocale();
     //FenChoixModule fen = new FenChoixModule();
     /*try {
@@ -144,7 +144,7 @@ MenuConnexion mconnexion = new MenuConnexion();
       for (int i = 0; i < r6.size(); i++){
               System.out.println(r6.get(i));
           } 
-      */
+     
        //Rechercher les infos d'une info d'un patient soigné
      String nom= sc.nextLine(); //On recherche la personne soignée a partir de son nom
      String prenom= sc.nextLine(); //On recherche la personne soignée a partir de son prenom
@@ -154,6 +154,7 @@ MenuConnexion mconnexion = new MenuConnexion();
       for (int i = 0; i < r7.size(); i++){
               System.out.println(r7.get(i));
           } 
+           */
 }
 /**
       String nom = sc.nextLine();
