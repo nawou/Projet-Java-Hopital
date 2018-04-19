@@ -23,7 +23,7 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
 
     public static ArrayList<String> requetes = new ArrayList<>();
     private Recherche recherche;
-    private Connexion maconnexion;
+    
     /**
      * Creates new form FenRService
      */
@@ -82,7 +82,6 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
 
         jLabel2.setText("(si vous n'entrez rien, vous aurez toutes les informations concernant les services)");
 
-        text_service.setText("text_service");
         text_service.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_serviceActionPerformed(evt);
@@ -91,11 +90,13 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
 
         jLabel3.setText("Nom service:");
 
-        text_Nemploye.setText("text_Nemploye");
+        text_Nemploye.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_NemployeActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Nom employé:");
-
-        text_Pemploye.setText("text_Pemploye");
 
         jLabel5.setText("Prénom employé:");
 
@@ -122,26 +123,25 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
                         .addComponent(Valider)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(text_Nemploye, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(text_service, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel3))
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel5)
-                                .addGap(1, 1, 1)
-                                .addComponent(text_Pemploye, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(text_service, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                            .addComponent(text_Nemploye)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(text_Pemploye, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(478, 478, 478))
         );
@@ -179,6 +179,10 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
         // TODO add your handling code here:
        
     }//GEN-LAST:event_text_serviceActionPerformed
+
+    private void text_NemployeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_NemployeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_NemployeActionPerformed
 
     /**
      * @param args the command line arguments
