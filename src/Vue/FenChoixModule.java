@@ -5,6 +5,7 @@
  */
 package Vue;
 
+import Modele.Connexion;
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
@@ -97,14 +98,23 @@ public class FenChoixModule extends JFrame implements ActionListener {
     }
     
     
-    
-    
-    
-    
     @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void actionPerformed(ActionEvent evt) {
+        Object source = evt.getSource();
+       if(source == moduleRecherche) {
+       super.dispose(); 
+       FenetreRecherche fen2= new FenetreRecherche();
     }
+    
+       
+                           
+        
+    }
+    
+    
+    
+    
+    
   
 
     
