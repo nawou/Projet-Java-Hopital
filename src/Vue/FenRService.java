@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -28,8 +29,13 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
      * Creates new form FenRService
      */
     public FenRService() {
+        super("Gestion informatique de votre centre hospitalier");
         initComponents();
+        //setSize(850,400);  //taille
+        setLocationRelativeTo(null); //on centre la fenêtre
+        setResizable(false); //On empêche le redimensionnement
         Valider.addActionListener(this);
+        Retour.addActionListener(this);
         setVisible(true);
         try {
             recherche = new Recherche();
@@ -40,6 +46,11 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
         }
     }
 
+    
+
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,6 +73,7 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
         Valider = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        Retour = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -78,7 +90,7 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Veuillez entrer le nom du service, le nom ou le prénom d'un employé");
+        jLabel1.setText("Veuillez remplir les champs suivants à votre convenance pour affiner votre recherche");
 
         jLabel2.setText("(si vous n'entrez rien, vous aurez toutes les informations concernant les services)");
 
@@ -88,7 +100,7 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
             }
         });
 
-        jLabel3.setText("Nom service:");
+        jLabel3.setText("Nom du service:");
 
         text_Nemploye.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,54 +108,53 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
             }
         });
 
-        jLabel4.setText("Nom employé:");
+        jLabel4.setText("Nom du directeur:");
 
-        jLabel5.setText("Prénom employé:");
+        jLabel5.setText("Prénom du directeur:");
 
-        Valider.setText("Valider");
+        Valider.setText("Rechercher");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
+
+        Retour.setText("Retour");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(text_service, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(text_Nemploye, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(text_Pemploye, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(Valider)
+                .addGap(21, 21, 21))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(jLabel1))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Retour)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(321, 321, 321)
-                        .addComponent(Valider)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(193, 193, 193)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(text_service, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                            .addComponent(text_Nemploye)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(text_Pemploye, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(478, 478, 478))
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel2))
+                            .addComponent(jLabel1))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,24 +163,20 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(text_service, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(text_Nemploye, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(text_Pemploye, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addComponent(Valider)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(text_service, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(text_Nemploye, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(text_Pemploye, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Valider))
+                .addGap(1, 1, 1)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Retour)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -184,6 +191,7 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
         // TODO add your handling code here:
     }//GEN-LAST:event_text_NemployeActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
@@ -220,6 +228,7 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Retour;
     private javax.swing.JButton Valider;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -240,27 +249,25 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
        Object source = e.getSource();
        if(source == Valider) { 
       
-                try {
+           try {
                requetes = recherche.rechercherService(text_service.getText(), text_Nemploye.getText(), text_Pemploye.getText());
-               } catch (SQLException ex) {
-               Logger.getLogger(FenRService.class.getName()).log(Level.SEVERE, null, ex);
-               } catch (ClassNotFoundException ex) {
-               Logger.getLogger(FenRService.class.getName()).log(Level.SEVERE, null, ex);
-               }
-               jTextArea1.setText("");
-               for (String element : requetes) {
-               jTextArea1.append(element);
-               }
-              /* requetes = maconnexion.remplirChampsRequete("SELECT * FROM employe WHERE nom='Nadal'");
            } catch (SQLException ex) {
                Logger.getLogger(FenRService.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(FenRService.class.getName()).log(Level.SEVERE, null, ex);
            }
+           jTextArea1.setText("");
            for (String element : requetes) {
-                        jTextArea1.append(element);
-                    }*/
-           
+               jTextArea1.append(element);
+           }
+          
   
        
     }
+       
+       else if (source==Retour){
+           FenetreRecherche fen = new FenetreRecherche();
+           super.dispose();
+       }
 }
 }

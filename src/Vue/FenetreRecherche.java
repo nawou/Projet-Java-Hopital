@@ -6,23 +6,42 @@
 package Vue;
 
 import javax.swing.JFrame;
+import Vue.FenRService;
+import java.awt.Button;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.AbstractButton;
 
 /**
  *
  * @author clara
  */
-public class FenetreRecherche extends javax.swing.JFrame {
+public class FenetreRecherche extends javax.swing.JFrame implements ActionListener {
 
     /**
      * Creates new form FenetreRecherche
      */
     public FenetreRecherche() {
-        super("Gestion informatique d'un centre hospitalier");
+        super("Gestion informatique de votre centre hospitalier");
         initComponents();
         setLocationRelativeTo(null); //on centre la fenêtre
-        setResizable(false); //On autorise le redimensionnement
+        setResizable(false); //On empêche le redimensionnement
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //pour quitter lors du clic sur la croix
         setVisible(true);
+        jRadioButtonSer.addActionListener(this);
+        Retour.addActionListener(this);
+        jRadioChambre.addActionListener(this);
+        jRadioDoc.addActionListener(this);
+        jRadioEmp.addActionListener(this);
+        jRadioHosp.addActionListener(this);
+        jRadioInf.addActionListener(this);
+        jRadioMal.addActionListener(this);
+        jRadioSoigne.addActionListener(this);
+        
+        
     }
 
     /**
@@ -35,110 +54,100 @@ public class FenetreRecherche extends javax.swing.JFrame {
     private void initComponents() {
 
         jToolBar1 = new javax.swing.JToolBar();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
+        jRadioButtonSer = new javax.swing.JRadioButton();
+        jRadioInf = new javax.swing.JRadioButton();
+        jRadioDoc = new javax.swing.JRadioButton();
+        jRadioMal = new javax.swing.JRadioButton();
+        jRadioEmp = new javax.swing.JRadioButton();
+        jRadioHosp = new javax.swing.JRadioButton();
+        jRadioChambre = new javax.swing.JRadioButton();
+        jRadioSoigne = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Retour = new javax.swing.JButton();
 
         jToolBar1.setRollover(true);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jRadioButton1.setText("Recherche d'un Service (Nom du Service, Bâtiments, Directeurs)");
+        jRadioButtonSer.setText("Recherche de service (Nom du Service, Bâtiments, Directeurs)");
 
-        jRadioButton2.setText("Recherche d'Infirmiers");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        jRadioInf.setText("Recherche d'infirmiers");
+        jRadioInf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                jRadioInfActionPerformed(evt);
             }
         });
 
-        jRadioButton3.setText("Recherche de Docteurs");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        jRadioDoc.setText("Recherche de médecins");
+        jRadioDoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                jRadioDocActionPerformed(evt);
             }
         });
 
-        jRadioButton4.setText("Recherche de Malades");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        jRadioMal.setText("Recherche de patients");
+        jRadioMal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                jRadioMalActionPerformed(evt);
             }
         });
 
-        jRadioButton5.setText("Recherche d'Employés");
-        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+        jRadioEmp.setText("Recherche d'employés");
+        jRadioEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton5ActionPerformed(evt);
+                jRadioEmpActionPerformed(evt);
             }
         });
 
-        jRadioButton6.setText("Recherche d'Hopistalisation");
-        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+        jRadioHosp.setText("Recherche d'hopistalisation");
+        jRadioHosp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton6ActionPerformed(evt);
+                jRadioHospActionPerformed(evt);
             }
         });
 
-        jRadioButton7.setText("Recherche de Chambre");
-        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
+        jRadioChambre.setText("Recherche de chambres");
+        jRadioChambre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton7ActionPerformed(evt);
+                jRadioChambreActionPerformed(evt);
             }
         });
 
-        jRadioButton8.setText("Recherche de personnes ayant été soignées dans le passé");
-        jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
+        jRadioSoigne.setText("Recherche de personnes ayant été soignées dans le passé");
+        jRadioSoigne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton8ActionPerformed(evt);
+                jRadioSoigneActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Veuillez choisir où vous souhaitez faire votre recherche:");
+        jLabel1.setText("Veuillez choisir la recherche que vous souhaitez effectuer:");
 
-        jButton1.setText("Retour");
+        Retour.setText("Retour");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(136, 136, 136)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 142, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton6)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton7)
-                            .addComponent(jRadioButton2))
-                        .addGap(254, 254, 254))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(115, 115, 115))))
+                    .addComponent(jRadioEmp)
+                    .addComponent(jRadioMal, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioSoigne)
+                    .addComponent(jRadioButtonSer)
+                    .addComponent(jRadioHosp)
+                    .addComponent(jRadioDoc)
+                    .addComponent(jRadioChambre)
+                    .addComponent(jRadioInf))
+                .addGap(33, 33, 33))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton5)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jRadioButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(jRadioButton8))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(271, 271, 271)
-                        .addComponent(jButton1)))
-                .addGap(0, 142, Short.MAX_VALUE))
+                .addGap(281, 281, 281)
+                .addComponent(Retour)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,60 +155,188 @@ public class FenetreRecherche extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton5)
+                .addComponent(jRadioEmp)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton4)
+                .addComponent(jRadioMal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton1)
+                .addComponent(jRadioButtonSer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton7)
+                .addComponent(jRadioChambre)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(jRadioDoc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(jRadioInf)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton6)
+                .addComponent(jRadioHosp)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton8)
+                .addComponent(jRadioSoigne)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(Retour)
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void jRadioMalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioMalActionPerformed
        Object source = evt.getSource();
-       if(source == jRadioButton4) {
+       if(source == jRadioMal) {
        super.dispose(); 
        //FenRMalade fenMalade= new FenRMalade();  // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_jRadioMalActionPerformed
     }
     
-    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton5ActionPerformed
+     /*private void jRadioButtonSerActionPerformed(java.awt.event.ActionEvent evt) {                                                
+       
+         if (jRadioButtonSer.isSelected())  {
+         FenRService fen = new FenRService();}
+    }  */  
+    
+    public void actionPerformed (ActionEvent e){
 
-    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton6ActionPerformed
 
-    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
+        if(jRadioButtonSer.isSelected()){
+            FenRService fen = new FenRService();
+            super.dispose(); 
+        }
+    
+        else if (jRadioChambre.isSelected()){
+            try {
+                FenRChambre fen = new FenRChambre();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            super.dispose(); 
+        }
+        
+        else if (jRadioDoc.isSelected()){
+           
+            
+            try {
+                FenRDoc fen = new FenRDoc();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            super.dispose(); 
+        }
+        
+            else if (jRadioEmp.isSelected()){
+           
+            
+            try {
+                FenREmp fen = new FenREmp();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            super.dispose(); 
+        }
+        
+         else if (jRadioHosp.isSelected()){
+           
+            
+            try {
+                FenRHosp fen = new FenRHosp();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            super.dispose(); 
+        }
+        
+         else if (jRadioInf.isSelected()){
+           
+            
+            try {
+                FenRInf fen = new FenRInf();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            super.dispose(); 
+        }
+        
+         else if (jRadioMal.isSelected()){
+           
+            
+            try {
+                FenRMalade fen = new FenRMalade();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            super.dispose(); 
+        }
+        
+        else if (jRadioSoigne.isSelected()){
+           
+            
+            try {
+                FenRSoigne fen = new FenRSoigne();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(FenetreRecherche.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            super.dispose(); 
+        }
+        
+        
+       if(e.getSource()==Retour){
+           FenChoixModule fen = new FenChoixModule();
+           super.dispose();
+       }
+    
+    }
+    
+       
+        
+    /*public void actionPerformedSer(ActionEvent evt) {
+        Object source = evt.getSource();
+       if(source == jRadioButtonSer) {
+       super.dispose(); 
+        FenRService fen = new FenRService();
+    }
+    }*/
+    
+    
+    private void jRadioEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioEmpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton7ActionPerformed
+    }//GEN-LAST:event_jRadioEmpActionPerformed
 
-    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
+    private void jRadioHospActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioHospActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton8ActionPerformed
+    }//GEN-LAST:event_jRadioHospActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void jRadioChambreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioChambreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_jRadioChambreActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void jRadioSoigneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioSoigneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_jRadioSoigneActionPerformed
+
+    private void jRadioDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioDocActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioDocActionPerformed
+
+    private void jRadioInfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioInfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioInfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,16 +344,18 @@ public class FenetreRecherche extends javax.swing.JFrame {
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Retour;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButtonSer;
+    private javax.swing.JRadioButton jRadioChambre;
+    private javax.swing.JRadioButton jRadioDoc;
+    private javax.swing.JRadioButton jRadioEmp;
+    private javax.swing.JRadioButton jRadioHosp;
+    private javax.swing.JRadioButton jRadioInf;
+    private javax.swing.JRadioButton jRadioMal;
+    private javax.swing.JRadioButton jRadioSoigne;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
+
+   
 }

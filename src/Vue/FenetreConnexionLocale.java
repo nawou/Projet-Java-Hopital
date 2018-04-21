@@ -8,7 +8,10 @@ package Vue;
 import Modele.Connexion;
 import java.awt.event.*;
 import java.awt.*;
+import java.sql.SQLException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 /**
  *
@@ -26,10 +29,10 @@ public class FenetreConnexionLocale extends JFrame implements ActionListener{
     public FenetreConnexionLocale(){
    
          // creation par heritage de la fenetre
-        super("Gestion informatique d'un centre hospitalier");
-        setSize(600,500);  //taille
+        super("Gestion informatique de votre centre hospitalier");
+        setSize(800,500);  //taille
         setLocationRelativeTo(null); //on centre la fenêtre
-        setResizable(false); //On autorise le redimensionnement
+        setResizable(false); //On empêche le redimensionnement
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //pour quitter lors du clic sur la croix
         setVisible(true);
     
@@ -61,7 +64,7 @@ public class FenetreConnexionLocale extends JFrame implements ActionListener{
                 //Création des labels
                 nomUt = new JLabel("Nom d'utilisateur :", JLabel.CENTER);
                 mdp = new JLabel("Mot de passe :", JLabel.CENTER);
-                nomBDD = new JLabel("Nom BDD :", JLabel.CENTER);
+                nomBDD = new JLabel("Nom de la base de données :", JLabel.CENTER);
                 messageCo = new JLabel("FORMULAIRE DE CONNEXION", JLabel.CENTER);
                 messageInfo = new JLabel("Veuillez entrer vos nom d'utilisateur, mot de passe et nom de BDD afin de vous connecter:", JLabel.CENTER);
 		
@@ -121,6 +124,7 @@ public class FenetreConnexionLocale extends JFrame implements ActionListener{
     }
 
     @Override
+    @SuppressWarnings("empty-statement")
     public void actionPerformed(ActionEvent evt) {
         Object source = evt.getSource();
        if(source == retourMenu) {
@@ -128,16 +132,76 @@ public class FenetreConnexionLocale extends JFrame implements ActionListener{
        MenuConnexion fen = new MenuConnexion();
     }
     
-       else if (source == connect){
+   
+      
+        else if (source == connect){
         try{
+             if((text_BDD.getText().equals(""))&&(text_login.getText().equals(""))&&(text_pass.getText().equals(""))){
+             JOptionPane.showMessageDialog(null, "Connexion impossible ! Veuillez réessayer");    
+             }
+       
+             else if((text_BDD.getText().equals("Hopital"))&&(text_login.getText().equals("root"))&&(text_pass.getText().equals("root"))){
              maconnexion = new Connexion(text_BDD.getText(), text_login.getText(), text_pass.getText());
              super.dispose();
              JOptionPane.showMessageDialog(null, "Connexion réussie !");
-             FenChoixModule fen = new FenChoixModule ();
+             FenChoixModule fen = new FenChoixModule ();}
+             
+              else if((!text_BDD.equals("hopital"))||(!text_login.equals("root"))||(!text_pass.equals("root"))){
+              
+              JOptionPane.showMessageDialog(null,"Les informations saisies sont incorrectes, veuillez réessayer !");
+            
+             }
         }catch(Exception e){ JOptionPane.showMessageDialog(null, e);}
+                           
+
+             
+        }
+            
+      
                            
         
     }
-    }
+    
 
 }
+
+/*
+
+   
+            if((!nomBDD.equals("hopital"))||(!login.equals("root"))||(!password.equals(""))){
+
+                if(!nomBDD.equals("hopital"))
+                    JOptionPane.showMessageDialog(null,"Error: La BDD n'existe pas !");
+            
+                if(!login.equals("root"))
+                    JOptionPane.showMessageDialog(null,"Error: Login incorrect !");
+
+                if(!password.equals(""))
+                    JOptionPane.showMessageDialog(null,"Error: Password incorrect !");  
+
+
+/*
+try{
+             maconnexion = new Connexion(text_BDD.getText(), text_login.getText(), text_pass.getText());
+             super.dispose();
+             if((text_BDD.equals("Hopital")) && (text_login.equals("root")) && (text_pass.equals("root")))
+             JOptionPane.showMessageDialog(null, "Connexion réussie !");
+               try{
+        }
+             FenChoixModule fen = new FenChoixModule ();
+        }catch(Exception e){ JOptionPane.showMessageDialog(null, e);}*/
+
+
+/*else if (source == connect){
+        try{
+             //maconnexion = new Connexion(text_BDD.getText(), text_login.getText(), text_pass.getText());
+             if((text_BDD.equals("Hopital"))&&(text_login.equals("root"))&&(text_pass.equals("root"))){
+             maconnexion = new Connexion(text_BDD.getText(), text_login.getText(), text_pass.getText());    
+             super.dispose();
+             JOptionPane.showMessageDialog(null, "Connexion réussie !");
+             FenChoixModule fen = new FenChoixModule ();}
+             
+        }catch(Exception e){ JOptionPane.showMessageDialog(null, e);}
+
+             
+        }*/

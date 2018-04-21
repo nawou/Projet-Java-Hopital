@@ -27,7 +27,7 @@ public class Recherche {
     ArrayList<String> arr;
 
 public Recherche() throws ClassNotFoundException, SQLException{
-    cn = new Connexion("Hopital", "root", "root");
+    cn = new Connexion("hopital", "root", "root");
 }
 
 
@@ -98,7 +98,7 @@ public ArrayList rechercherChambre (String nb_lits, String no_chambre) throws SQ
 
      //Connexion cn = new Connexion("Hopital", "root", "root");
       //Connexion cn = new Connexion("Hopital", "root", "root");
-      query= "SELECT * FROM employe WHERE true";
+      query= "SELECT * FROM infirmier WHERE true";
      if (!nom.equals("")){query+=" AND nom ='" + nom + "'";}
      if (!prenom.equals("")){query+=" AND prenom ='" + prenom + "'";}
      if (!rot.equals("")){query+=" AND numero IN (SELECT numero FROM infirmier WHERE rotation='" + rot + "'";} //Recherche à partir d'une spe

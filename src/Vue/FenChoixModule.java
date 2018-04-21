@@ -17,15 +17,15 @@ import javax.swing.*;
 public class FenChoixModule extends JFrame implements ActionListener {
 
     
-    private JButton moduleRecherche, moduleMAJ, moduleReporting;
+    private JButton moduleRecherche, moduleMAJ, moduleReporting, moduleAjouter, moduleSupprimer;
     private JLabel choixModule, veuillez;
     private JPanel p0;
     
     public FenChoixModule(){
         
          // creation par heritage de la fenetre
-        super("Gestion informatique d'un centre hospitalier");
-        setSize(600,500);  //taille
+        super("Gestion informatique de votre centre hospitalier");
+        setSize(700,600);  //taille
         setLocationRelativeTo(null); //on centre la fenêtre
         setResizable(false); //On autorise le redimensionnement
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //pour quitter lors du clic sur la croix
@@ -42,12 +42,14 @@ public class FenChoixModule extends JFrame implements ActionListener {
         
         // creation des boutons
         moduleRecherche = new JButton("Recherche");
-        moduleMAJ = new JButton("Mise à jour");
+        moduleMAJ = new JButton("Modification");
         moduleReporting = new JButton("Reporting");
+        moduleAjouter = new JButton("Ajout");
+        moduleSupprimer = new JButton("Suppression");
         
         // creation des labels
         choixModule = new JLabel("CHOIX DE MODULE");
-        veuillez = new JLabel("Veuillez faire votre choix parmi les 3 modules suivants:");
+        veuillez = new JLabel("Veuillez faire votre choix parmi les 3 modules suivants (recherche, mise à jour, reporting):");
         veuillez.setForeground(Color.RED);
         
         //Mise en page des labels
@@ -71,6 +73,15 @@ public class FenChoixModule extends JFrame implements ActionListener {
         p0.add(Box.createRigidArea(new Dimension(0, 50)));
         p0.add(moduleRecherche);
      
+        moduleAjouter.setFont(f); 
+        moduleAjouter.setBackground(Color.RED);
+        moduleAjouter.setOpaque(true);
+        moduleAjouter.setBorderPainted(false);
+        moduleAjouter.setAlignmentX(Component.CENTER_ALIGNMENT);
+        moduleAjouter.setPreferredSize(new Dimension(50, 10));
+        p0.add(Box.createRigidArea(new Dimension(0, 50)));
+        p0.add(moduleAjouter);
+        
         moduleMAJ.setFont(f); 
         moduleMAJ.setBackground(Color.RED);
         moduleMAJ.setOpaque(true);
@@ -79,6 +90,15 @@ public class FenChoixModule extends JFrame implements ActionListener {
         moduleMAJ.setPreferredSize(new Dimension(50, 10));
         p0.add(Box.createRigidArea(new Dimension(0, 50)));
         p0.add(moduleMAJ);
+        
+        moduleSupprimer.setFont(f); 
+        moduleSupprimer.setBackground(Color.RED);
+        moduleSupprimer.setOpaque(true);
+        moduleSupprimer.setBorderPainted(false);
+        moduleSupprimer.setAlignmentX(Component.CENTER_ALIGNMENT);
+        moduleSupprimer.setPreferredSize(new Dimension(50, 10));
+        p0.add(Box.createRigidArea(new Dimension(0, 50)));
+        p0.add(moduleSupprimer);
         
         moduleReporting.setFont(f); 
         moduleReporting.setBackground(Color.yellow);
@@ -93,7 +113,6 @@ public class FenChoixModule extends JFrame implements ActionListener {
         add(p0);
         //Mise en forme des boutons
         
-moduleRecherche.addActionListener(this);
         
     }
     
@@ -104,7 +123,6 @@ moduleRecherche.addActionListener(this);
        if(source == moduleRecherche) {
        super.dispose(); 
        FenetreRecherche fen2= new FenetreRecherche();
-       
     }
     
        
