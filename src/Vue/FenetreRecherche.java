@@ -8,6 +8,7 @@ package Vue;
 import javax.swing.JFrame;
 import Vue.FenRService;
 import java.awt.Button;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -25,12 +26,15 @@ public class FenetreRecherche extends javax.swing.JFrame implements ActionListen
      * Creates new form FenetreRecherche
      */
     public FenetreRecherche() {
+        
+        
         super("Gestion informatique de votre centre hospitalier");
         initComponents();
         setLocationRelativeTo(null); //on centre la fenêtre
         setResizable(false); //On empêche le redimensionnement
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //pour quitter lors du clic sur la croix
         setVisible(true);
+        getContentPane().setBackground(Color.WHITE); 
         jRadioButtonSer.addActionListener(this);
         Retour.addActionListener(this);
         jRadioChambre.addActionListener(this);
@@ -41,6 +45,18 @@ public class FenetreRecherche extends javax.swing.JFrame implements ActionListen
         jRadioMal.addActionListener(this);
         jRadioSoigne.addActionListener(this);
         
+        Font f=new Font("Arial", Font.BOLD, 14);
+      
+        jLabel1.setFont(f);
+        jLabel1.setForeground(Color.RED);
+        jRadioButtonSer.setFont(f);
+        jRadioChambre.setFont(f);
+        jRadioDoc.setFont(f);
+        jRadioEmp.setFont(f);
+        jRadioHosp.setFont(f);
+        jRadioInf.setFont(f);
+        jRadioMal.setFont(f);
+        jRadioSoigne.setFont(f);
         
     }
 
@@ -69,7 +85,7 @@ public class FenetreRecherche extends javax.swing.JFrame implements ActionListen
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jRadioButtonSer.setText("Recherche de service (Nom du Service, Bâtiments, Directeurs)");
+        jRadioButtonSer.setText("Recherche de service ");
 
         jRadioInf.setText("Recherche d'infirmiers");
         jRadioInf.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +129,7 @@ public class FenetreRecherche extends javax.swing.JFrame implements ActionListen
             }
         });
 
-        jRadioSoigne.setText("Recherche de personnes ayant été soignées dans le passé");
+        jRadioSoigne.setText("Recherche de patients et de leurs médecins");
         jRadioSoigne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioSoigneActionPerformed(evt);
@@ -129,25 +145,28 @@ public class FenetreRecherche extends javax.swing.JFrame implements ActionListen
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 142, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioEmp)
-                    .addComponent(jRadioMal, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioSoigne)
-                    .addComponent(jRadioButtonSer)
-                    .addComponent(jRadioHosp)
-                    .addComponent(jRadioDoc)
-                    .addComponent(jRadioChambre)
-                    .addComponent(jRadioInf))
-                .addGap(33, 33, 33))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(281, 281, 281)
-                .addComponent(Retour)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(297, 297, 297)
+                        .addComponent(Retour))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioMal, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioEmp)
+                            .addComponent(jRadioButtonSer)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(239, 239, 239)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioInf)
+                            .addComponent(jRadioDoc)
+                            .addComponent(jRadioHosp)
+                            .addComponent(jRadioSoigne)
+                            .addComponent(jRadioChambre))))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -9,6 +9,7 @@ import java.sql.*;
 import Modele.Connexion;
 import Modele.Mise_a_jour;
 import Modele.Recherche;
+import Vue.FenChoixAjout;
 import Vue.FenChoixModule;
 import Vue.FenRService;
 import Vue.FenetreConnexionLocale;
@@ -29,6 +30,7 @@ public class TestHopital {
     public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
     MenuConnexion mconnexion = new MenuConnexion();
+     //FenChoixAjout fen = new FenChoixAjout();
     //FenetreRecherche fen = new FenetreRecherche();
     //FenChoixModule fene = new FenChoixModule();
    //FenRService fen = new FenRService();

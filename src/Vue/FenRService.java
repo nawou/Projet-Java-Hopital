@@ -7,6 +7,8 @@ package Vue;
 
 import Modele.Connexion;
 import Modele.Recherche;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -44,6 +46,11 @@ public class FenRService extends javax.swing.JFrame implements ActionListener {
         } catch (SQLException ex) {
             Logger.getLogger(FenRService.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        getContentPane().setBackground(Color.orange); 
+        Font f=new Font("Arial", Font.BOLD, 13);
+        jLabel1.setFont(f);
+        jLabel2.setFont(f);
     }
 
     

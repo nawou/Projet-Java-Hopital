@@ -6,6 +6,8 @@
 package Vue;
 
 import Modele.Recherche;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -35,6 +37,11 @@ public class FenREmp extends javax.swing.JFrame implements ActionListener{
         setVisible(true);
        
         recherche = new Recherche();
+        
+        getContentPane().setBackground(Color.orange); 
+        Font f=new Font("Arial", Font.BOLD, 13);
+        jLabel3.setFont(f);
+        jLabel4.setFont(f);
     }
 
     /**

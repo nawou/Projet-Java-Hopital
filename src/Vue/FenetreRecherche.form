@@ -32,29 +32,36 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="402" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="142" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jRadioEmp" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioMal" min="-2" pref="189" max="-2" attributes="0"/>
-                  <Component id="jRadioSoigne" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButtonSer" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioHosp" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioDoc" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioChambre" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioInf" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="297" max="-2" attributes="0"/>
+                      <Component id="Retour" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="402" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jRadioMal" min="-2" pref="189" max="-2" attributes="0"/>
+                          <Component id="jRadioEmp" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioButtonSer" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jRadioInf" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioDoc" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioHosp" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioSoigne" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioChambre" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="281" max="-2" attributes="0"/>
-              <Component id="Retour" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="137" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -89,7 +96,7 @@
   <SubComponents>
     <Component class="javax.swing.JRadioButton" name="jRadioButtonSer">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Recherche de service (Nom du Service, B&#xe2;timents, Directeurs)"/>
+        <Property name="text" type="java.lang.String" value="Recherche de service "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioInf">
@@ -142,7 +149,7 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioSoigne">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Recherche de personnes ayant &#xe9;t&#xe9; soign&#xe9;es dans le pass&#xe9;"/>
+        <Property name="text" type="java.lang.String" value="Recherche de patients et de leurs m&#xe9;decins"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioSoigneActionPerformed"/>

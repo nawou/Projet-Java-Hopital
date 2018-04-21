@@ -28,7 +28,7 @@ public class FenChoixModule extends JFrame implements ActionListener {
         setSize(700,600);  //taille
         setLocationRelativeTo(null); //on centre la fenêtre
         setResizable(false); //On autorise le redimensionnement
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //pour quitter lors du clic sur la croix
+        setDefaultCloseOperation(this.EXIT_ON_CLOSE); //pour quitter lors du clic sur la croix
         setVisible(true);
         
         Font f=new Font("Arial", Font.BOLD, 18);
@@ -110,6 +110,10 @@ public class FenChoixModule extends JFrame implements ActionListener {
         p0.add( moduleReporting);
        
         moduleRecherche.addActionListener(this);
+        moduleAjouter.addActionListener(this);
+        moduleMAJ.addActionListener(this);
+        moduleSupprimer.addActionListener(this);
+        
         add(p0);
         //Mise en forme des boutons
         
@@ -125,7 +129,19 @@ public class FenChoixModule extends JFrame implements ActionListener {
        FenetreRecherche fen2= new FenetreRecherche();
     }
     
+       else if(source == moduleAjouter) {
+       super.dispose(); 
+       FenChoixAjout fen2= new FenChoixAjout();
+    }
+        else if(source == moduleSupprimer) {
+       super.dispose(); 
+       FenChoixDelete fen2= new FenChoixDelete();
+    }
        
+       else if(source == moduleMAJ) {
+       super.dispose(); 
+       FenChoixModif fen2= new FenChoixModif();
+    }
                            
         
     }

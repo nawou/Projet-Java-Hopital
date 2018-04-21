@@ -6,6 +6,8 @@
 package Vue;
 
 import Modele.Recherche;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -34,8 +36,12 @@ public class FenRSoigne extends javax.swing.JFrame implements ActionListener{
         Retour.addActionListener(this);
         setVisible(true);
         
-            recherche = new Recherche();
+        recherche = new Recherche();
        
+        getContentPane().setBackground(Color.orange); 
+        Font f=new Font("Arial", Font.BOLD, 13);
+        jLabel1.setFont(f);
+        jLabel2.setFont(f);
     }
 
     /**
@@ -66,7 +72,7 @@ public class FenRSoigne extends javax.swing.JFrame implements ActionListener{
 
         jLabel1.setText("Veuillez remplir les champs suivants à votre convenance pour affiner votre recherche");
 
-        jLabel2.setText("(si vous n'entrez rien, vous aurez toutes les informations concernant les personnes ayant été hospitalisées)");
+        jLabel2.setText("(si vous n'entrez rien, vous aurez toutes les informations concernant les personnes soignées)");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -88,6 +94,10 @@ public class FenRSoigne extends javax.swing.JFrame implements ActionListener{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 16, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -119,17 +129,11 @@ public class FenRSoigne extends javax.swing.JFrame implements ActionListener{
                         .addComponent(Retour))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(131, 131, 131)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 16, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(74, 74, 74))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
