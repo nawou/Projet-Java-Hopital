@@ -9,6 +9,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -30,6 +33,8 @@ public class FenChoixDelete extends javax.swing.JFrame implements ActionListener
         getContentPane().setBackground(Color.WHITE); 
         
         Retour.addActionListener(this);
+        patient.addActionListener(this);
+        employe.addActionListener(this);
         
         Font f=new Font("Arial", Font.BOLD, 13);
         jLabel1.setFont(f);
@@ -37,14 +42,14 @@ public class FenChoixDelete extends javax.swing.JFrame implements ActionListener
         jLabel3.setFont(f);
        
         employe.setFont(f); 
-        employe.setBackground(Color.orange);
-        employe.setOpaque(true);
-        employe.setBorderPainted(false);
+        //employe.setBackground(Color.orange);
+        //employe.setOpaque(true);
+       // employe.setBorderPainted(false);
         
         patient.setFont(f); 
-        patient.setBackground(Color.green);
-        patient.setOpaque(true);
-        patient.setBorderPainted(false);
+        //patient.setBackground(Color.green);
+        //patient.setOpaque(true);
+        //patient.setBorderPainted(false);
     }
 
     /**
@@ -84,9 +89,18 @@ public class FenChoixDelete extends javax.swing.JFrame implements ActionListener
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(223, 223, 223)
+                        .addComponent(Retour))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 99, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(130, 130, 130)
                         .addComponent(employe)
-                        .addGap(82, 82, 82)
+                        .addGap(81, 81, 81)
                         .addComponent(patient))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(182, 182, 182)
@@ -95,20 +109,11 @@ public class FenChoixDelete extends javax.swing.JFrame implements ActionListener
                         .addGap(138, 138, 138)
                         .addComponent(jLabel3)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
-                        .addComponent(Retour))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
@@ -116,8 +121,8 @@ public class FenChoixDelete extends javax.swing.JFrame implements ActionListener
                 .addComponent(jLabel2)
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(employe)
-                    .addComponent(patient))
+                    .addComponent(employe, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patient, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addComponent(Retour)
                 .addGap(33, 33, 33))
@@ -177,5 +182,28 @@ public class FenChoixDelete extends javax.swing.JFrame implements ActionListener
            FenChoixModule fen = new FenChoixModule();
            super.dispose();
        }
+       
+       if (source==employe){
+           try {
+               FenSupEmp fen = new FenSupEmp();
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(FenChoixDelete.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (SQLException ex) {
+               Logger.getLogger(FenChoixDelete.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           super.dispose();
+       }
+       
+       if (source==patient){
+           try {
+               FenSupMal fen = new FenSupMal();
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(FenChoixDelete.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (SQLException ex) {
+               Logger.getLogger(FenChoixDelete.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           super.dispose();
+       }
+       
     }
 }

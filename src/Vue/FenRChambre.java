@@ -43,6 +43,7 @@ public class FenRChambre extends javax.swing.JFrame implements ActionListener {
         Font f=new Font("Arial", Font.BOLD, 13);
         jLabel1.setFont(f);
         jLabel3.setFont(f);
+        jLabel6.setFont(f);
         
     }
 
@@ -66,6 +67,7 @@ public class FenRChambre extends javax.swing.JFrame implements ActionListener {
         jLabel5 = new javax.swing.JLabel();
         Valider = new javax.swing.JButton();
         Retour = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -77,7 +79,7 @@ public class FenRChambre extends javax.swing.JFrame implements ActionListener {
 
         jLabel1.setText("Veuillez remplir les champs suivants à votre convenance pour affiner votre recherche");
 
-        jLabel3.setText(" (si vous n'entrez rien, vous aurez toutes les informations concernant les chambres)");
+        jLabel3.setText(" (si vous n'entrez rien, vous aurez les informations concernant toutes les chambres et leurs surveillants)");
 
         jLabel4.setText("Numéro de chambre:");
 
@@ -87,34 +89,43 @@ public class FenRChambre extends javax.swing.JFrame implements ActionListener {
 
         Retour.setText("Retour");
 
+        jLabel6.setText("n°chambre || nombre de lits || Nom (surveillant) || Prénom (surveillant) || Service (chambre ) ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(text_chambre, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(text_lit, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(Valider)
-                .addGap(302, 302, 302))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(161, 161, 161)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jLabel1)
+                .addGap(0, 215, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Retour)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 801, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(103, 103, 103)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(text_chambre, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(text_lit, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addComponent(Valider)
+                        .addGap(302, 302, 302))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(716, 716, 716)
+                        .addComponent(Retour)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 801, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,11 +141,13 @@ public class FenRChambre extends javax.swing.JFrame implements ActionListener {
                     .addComponent(jLabel5)
                     .addComponent(text_lit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Valider))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Retour)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -189,6 +202,7 @@ public class FenRChambre extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField text_chambre;
@@ -204,6 +218,7 @@ public class FenRChambre extends javax.swing.JFrame implements ActionListener {
                requetes = recherche.rechercherChambre(text_lit.getText(), text_chambre.getText());
            } catch (SQLException ex) {
                Logger.getLogger(FenRChambre.class.getName()).log(Level.SEVERE, null, ex);
+               JOptionPane.showMessageDialog(null,"Les informations saisies sont incorrectes !");
            } catch (ClassNotFoundException ex) {
                Logger.getLogger(FenRChambre.class.getName()).log(Level.SEVERE, null, ex);
            }

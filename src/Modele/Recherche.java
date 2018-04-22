@@ -36,7 +36,7 @@ public Recherche() throws ClassNotFoundException, SQLException{
 public ArrayList rechercherService (String nomService, String nom ,String prenom) throws SQLException, ClassNotFoundException{
 
      //Connexion cn = new Connexion("Hopital", "root", "root");
-     query= "SELECT employe.nom, employe.prenom, employe.tel, service.nom, service.batiment FROM employe INNER JOIN service WHERE true AND employe.numero=service.directeur";
+     query= "SELECT service.nom, service.batiment, employe.nom, employe.prenom, employe.tel FROM employe INNER JOIN service WHERE true AND employe.numero=service.directeur";
      if (!nom.equals("")){query+=" AND employe.nom ='" + nom + "'";}
      if (!prenom.equals("")){query+=" AND employe.prenom ='" + prenom + "'";}
      if (!nomService.equals("")){query+=" AND service.nom='" + nomService + "'";} //Je cherche les infos d'un service
@@ -51,7 +51,7 @@ public ArrayList rechercherService (String nomService, String nom ,String prenom
 public ArrayList rechercherChambre (String nb_lits, String no_chambre) throws SQLException, ClassNotFoundException{
 
      //Connexion cn = new Connexion("Hopital", "root", "root");
-     query= "SELECT employe.nom, employe.prenom, employe.tel, chambre.code_service, chambre.no_chambre, chambre.nb_lits FROM employe INNER JOIN chambre WHERE true AND employe.numero=chambre.surveillant ";
+     query= "SELECT chambre.no_chambre, chambre.nb_lits, employe.nom, employe.prenom, employe.tel, chambre.code_service FROM employe INNER JOIN chambre WHERE true AND employe.numero=chambre.surveillant ";
      if (!nb_lits.equals("")){query+=" AND chambre.nb_lits ='" + nb_lits + "'";}
      if (!no_chambre.equals("")){query+=" AND chambre.no_chambre ='" + no_chambre + "'";}
     

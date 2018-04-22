@@ -36,18 +36,18 @@ public class FenChoixAjout extends javax.swing.JFrame implements ActionListener{
         employe.addActionListener(this);
         patient.addActionListener(this);
         
-        Font f=new Font("Arial", Font.BOLD, 14);
+        Font f=new Font("Arial", Font.BOLD, 13);
         jLabel1.setFont(f);
        
         employe.setFont(f); 
-        employe.setBackground(Color.orange);
-        employe.setOpaque(true);
-        employe.setBorderPainted(false);
+        //employe.setBackground(Color.orange);
+        //employe.setOpaque(true);
+        employe.setBorderPainted(true);
         
         patient.setFont(f); 
-        patient.setBackground(Color.green);
-        patient.setOpaque(true);
-        patient.setBorderPainted(false);
+        //patient.setBackground(Color.green);
+        //patient.setOpaque(true);
+        //patient.setBorderPainted(false);
     }
 
     /**
@@ -84,25 +84,26 @@ public class FenChoixAjout extends javax.swing.JFrame implements ActionListener{
                         .addGap(79, 79, 79)
                         .addComponent(employe)
                         .addGap(48, 48, 48)
-                        .addComponent(patient))
+                        .addComponent(patient, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(157, 157, 157)
-                        .addComponent(Retour))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel1)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                        .addComponent(Retour)))
+                .addContainerGap(81, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(48, 48, 48))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(55, 55, 55)
                 .addComponent(jLabel1)
-                .addGap(59, 59, 59)
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(employe)
-                    .addComponent(patient))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                    .addComponent(employe, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patient, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(Retour)
                 .addGap(27, 27, 27))
         );
@@ -172,7 +173,13 @@ public class FenChoixAjout extends javax.swing.JFrame implements ActionListener{
        }
        
        else if (source==patient){
-           FenAjoutMal fen = new FenAjoutMal();
+           try {
+               FenAjoutMal fen = new FenAjoutMal();
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(FenChoixAjout.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (SQLException ex) {
+               Logger.getLogger(FenChoixAjout.class.getName()).log(Level.SEVERE, null, ex);
+           }
            super.dispose();
        }
     }

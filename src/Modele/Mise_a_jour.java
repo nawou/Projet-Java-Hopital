@@ -18,22 +18,49 @@ import javax.swing.JOptionPane;
 public class Mise_a_jour {
     
       Connexion cn;
-      String query;
+      String query, query1;
       ArrayList<String> arr;
       
       public Mise_a_jour() throws ClassNotFoundException, SQLException{
         cn = new Connexion("Hopital", "root", "root");
 }
-      public void DeleteEmploye (String nom,String prenom){
+      /*public boolean DeleteEmploye (String nom, String prenom) throws  SQLException{
               
       query = "DELETE FROM employe WHERE true";
       if (!nom.equals("")){query+=" AND nom ='" + nom + "'";}
-      if (!prenom.equals("")){query+=" AND nom ='" + prenom + "'";}
-      try {System.out.print(query);
+      if (!prenom.equals("")){query+=" AND prenom ='" + prenom + "'";} 
+      try{System.out.print(query);
           //arr=cn.remplirChampsRequete(query);
-          cn.executeUpdate(query);}catch(SQLException e)
-      {e.printStackTrace();}
-    }
+          cn.executeUpdate(query);
+          return true;}catch(SQLException e)
+      { 
+        JOptionPane.showMessageDialog(null,"Les informations saisies sont incorrectes");
+        e.printStackTrace();
+        return false;
+      //JOptionPane.showMessageDialog(null,"Les informations saisies sont incorrectes");}
+       }
+     }*/
+      
+      public boolean DeleteEmploye (String nom,String prenom) throws SQLException{
+              
+      query1 = "SELECT * FROM employe WHERE true AND nom='"+ nom + "' AND prenom ='" + prenom + "'"; 
+       query = "DELETE FROM employe WHERE true";
+     if (!nom.equals("")){query+=" AND nom ='" + nom + "'";}
+     if (!prenom.equals("")){query+=" AND prenom ='" + prenom + "'";} 
+      try {System.out.println(query);
+      System.out.println(query1);
+          //arr=cn.remplirChampsRequete(query);
+          if(cn.remplirChampsRequete(query1).size()==0){
+              JOptionPane.showMessageDialog(null,"Les informations saisies sont incorrectes");
+              return false;
+          }
+       else cn.executeUpdate(query);
+      return true;}catch(SQLException e)
+      {e.printStackTrace();
+      JOptionPane.showMessageDialog(null,"Les informations saisies sont incorrectes");
+      return false; }
+       
+      }
       
       public boolean AjouterEmploye (String numero, String nom, String prenom, String adresse, String tel) throws SQLIntegrityConstraintViolationException, SQLException{
        
@@ -70,21 +97,31 @@ public class Mise_a_jour {
       }
       }
       
-      public void DeleteMalade (String nom,String prenom){
+      public boolean DeleteMalade (String nom,String prenom) throws SQLException{
               
-      query = "DELETE FROM malade WHERE true";
+      query1 = "SELECT * FROM malade WHERE true AND nom='"+ nom + "' AND prenom ='" + prenom + "'"; 
+       query = "DELETE FROM malade WHERE true";
      if (!nom.equals("")){query+=" AND nom ='" + nom + "'";}
-     if (!prenom.equals("")){query+=" AND nom ='" + prenom + "'";} 
-      try {System.out.print(query);
+     if (!prenom.equals("")){query+=" AND prenom ='" + prenom + "'";} 
+      try {System.out.println(query);
+      System.out.println(query1);
           //arr=cn.remplirChampsRequete(query);
-          cn.executeUpdate(query);}catch(SQLException e)
-      {e.printStackTrace();}
-    }
+          if(cn.remplirChampsRequete(query1).size()==0){
+              JOptionPane.showMessageDialog(null,"Les informations saisies sont incorrectes");
+              return false;
+          }
+       else cn.executeUpdate(query);
+      return true;}catch(SQLException e)
+      {e.printStackTrace();
+      JOptionPane.showMessageDialog(null,"Les informations saisies sont incorrectes");
+      return false; }
+       
+      }
      
 //Modifier un malade en recherchant son nom et en entrant tout le reste de ses infos 
        public void ModifierMalade (String nomAncien, String numero, String nom, String prenom, String adresse, String tel, String mutuelle){
      //Connexion cn = new Connexion("Hopital", "root", "root");
-     query = "UPDATE malade SET numero ='" + numero+"' ,nom ='"+nom+"' ,prenom ='"+prenom+"' ,adresse='"+adresse+"' ,tel ='"+tel+ "' ,mutuelle= '"+mutuelle+"' WHERE nom='" + nomAncien+ "'" ;
+     query = "UPDATE malade SET adresse='"+adresse+"' ,tel ='"+tel+ "' ,mutuelle= '"+mutuelle+"' WHERE nom='" + nomAncien+ "'" ;
      try {System.out.print(query);
           //arr=cn.remplirChampsRequete(query);
           cn.executeUpdate(query);}catch(SQLException e)
@@ -93,7 +130,7 @@ public class Mise_a_jour {
 //Modifier un malade en recherchant son nom et en entrant tout le reste de ses infos 
        public void ModifierEmploye (String nomAncien, String numero, String nom, String prenom, String adresse, String tel){
      //Connexion cn = new Connexion("Hopital", "root", "root");
-     query = "UPDATE malade SET numero ='" + numero+"' ,nom ='"+nom+"' ,prenom ='"+prenom+"' ,adresse='"+adresse+"' ,tel ='"+tel+"' WHERE nom='" + nomAncien+ "'" ;
+     query = "UPDATE malade SET numero ='adresse='"+adresse+"' ,tel ='"+tel+"' WHERE nom='" + nomAncien+ "'" ;
      try {System.out.print(query);
           //arr=cn.remplirChampsRequete(query);
           cn.executeUpdate(query);}catch(SQLException e)

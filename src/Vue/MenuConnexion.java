@@ -47,7 +47,7 @@ public class MenuConnexion extends JFrame implements ActionListener{
     panel.setPreferredSize(new Dimension(100,200));
     JLabel label = new JLabel("Bienvenue dans votre système de gestion de centre hospitalier !"); 
     
-    Font f=new Font("Arial", Font.BOLD, 18);
+    Font f=new Font("Arial", Font.BOLD, 16);
     label.setFont(f); 
     
     label.setForeground(Color.RED);

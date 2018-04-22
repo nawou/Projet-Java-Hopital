@@ -31,18 +31,18 @@ public class FenChoixModif extends javax.swing.JFrame implements ActionListener 
         
         Retour.addActionListener(this);
         
-        Font f=new Font("Arial", Font.BOLD, 14);
+        Font f=new Font("Arial", Font.BOLD, 13);
         jLabel1.setFont(f);
        
         employe.setFont(f); 
-        employe.setBackground(Color.orange);
-        employe.setOpaque(true);
-        employe.setBorderPainted(false);
+        //employe.setBackground(Color.orange);
+        //employe.setOpaque(true);
+        //employe.setBorderPainted(false);
         
         patient.setFont(f); 
-        patient.setBackground(Color.green);
-        patient.setOpaque(true);
-        patient.setBorderPainted(false);
+        //patient.setBackground(Color.green);
+        //patient.setOpaque(true);
+        //patient.setBorderPainted(false);
     }
 
     /**
@@ -65,7 +65,7 @@ public class FenChoixModif extends javax.swing.JFrame implements ActionListener 
 
         patient.setText("Patient");
 
-        jLabel1.setText("Voulez-vous modifier les informations concernant un employé ou patient ?");
+        jLabel1.setText("Voulez-vous modifier les informations concernant un employé ou un patient ?");
 
         Retour.setText("Retour");
 
@@ -74,32 +74,32 @@ public class FenChoixModif extends javax.swing.JFrame implements ActionListener 
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(70, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(employe)
-                        .addGap(51, 51, 51)
+                        .addGap(50, 50, 50)
                         .addComponent(patient)
-                        .addGap(155, 155, 155))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Retour)
-                        .addGap(229, 229, 229))
+                        .addGap(156, 156, 156))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addContainerGap())))
+                        .addGap(33, 33, 33))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Retour)
+                        .addGap(230, 230, 230))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addComponent(jLabel1)
-                .addGap(56, 56, 56)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(employe)
-                    .addComponent(patient))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                    .addComponent(employe, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patient, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
                 .addComponent(Retour)
-                .addGap(23, 23, 23))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();

@@ -45,7 +45,7 @@ public class FenetreRecherche extends javax.swing.JFrame implements ActionListen
         jRadioMal.addActionListener(this);
         jRadioSoigne.addActionListener(this);
         
-        Font f=new Font("Arial", Font.BOLD, 14);
+        Font f=new Font("Arial", Font.BOLD, 13);
       
         jLabel1.setFont(f);
         jLabel1.setForeground(Color.RED);

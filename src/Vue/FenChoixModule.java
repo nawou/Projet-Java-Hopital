@@ -25,14 +25,14 @@ public class FenChoixModule extends JFrame implements ActionListener {
         
          // creation par heritage de la fenetre
         super("Gestion informatique de votre centre hospitalier");
-        setSize(700,600);  //taille
+        setSize(700,550);  //taille
         setLocationRelativeTo(null); //on centre la fenêtre
         setResizable(false); //On autorise le redimensionnement
         setDefaultCloseOperation(this.EXIT_ON_CLOSE); //pour quitter lors du clic sur la croix
         setVisible(true);
         
-        Font f=new Font("Arial", Font.BOLD, 18);
-        Font f2=new Font("Arial", Font.BOLD, 14);
+        Font f=new Font("Arial", Font.BOLD, 13);
+        Font f2=new Font("Arial", Font.BOLD, 13);
           
         // creation du panel
         JPanel p0 = new JPanel(); 
@@ -50,7 +50,7 @@ public class FenChoixModule extends JFrame implements ActionListener {
         // creation des labels
         choixModule = new JLabel("CHOIX DE MODULE");
         veuillez = new JLabel("Veuillez faire votre choix parmi les 3 modules suivants (recherche, mise à jour, reporting):");
-        veuillez.setForeground(Color.RED);
+        veuillez.setForeground(Color.red);
         
         //Mise en page des labels
         choixModule.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -65,7 +65,7 @@ public class FenChoixModule extends JFrame implements ActionListener {
         
         //Mise en forme des boutons
         moduleRecherche.setFont(f); 
-        moduleRecherche.setBackground(Color.green);
+        moduleRecherche.setBackground(Color.orange);
         moduleRecherche.setOpaque(true);
         moduleRecherche.setBorderPainted(false);
         moduleRecherche.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -74,7 +74,7 @@ public class FenChoixModule extends JFrame implements ActionListener {
         p0.add(moduleRecherche);
      
         moduleAjouter.setFont(f); 
-        moduleAjouter.setBackground(Color.RED);
+        moduleAjouter.setBackground(Color.LIGHT_GRAY);
         moduleAjouter.setOpaque(true);
         moduleAjouter.setBorderPainted(false);
         moduleAjouter.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -83,7 +83,7 @@ public class FenChoixModule extends JFrame implements ActionListener {
         p0.add(moduleAjouter);
         
         moduleMAJ.setFont(f); 
-        moduleMAJ.setBackground(Color.RED);
+        moduleMAJ.setBackground(Color.LIGHT_GRAY);
         moduleMAJ.setOpaque(true);
         moduleMAJ.setBorderPainted(false);
         moduleMAJ.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -92,7 +92,7 @@ public class FenChoixModule extends JFrame implements ActionListener {
         p0.add(moduleMAJ);
         
         moduleSupprimer.setFont(f); 
-        moduleSupprimer.setBackground(Color.RED);
+        moduleSupprimer.setBackground(Color.LIGHT_GRAY);
         moduleSupprimer.setOpaque(true);
         moduleSupprimer.setBorderPainted(false);
         moduleSupprimer.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -101,7 +101,7 @@ public class FenChoixModule extends JFrame implements ActionListener {
         p0.add(moduleSupprimer);
         
         moduleReporting.setFont(f); 
-        moduleReporting.setBackground(Color.yellow);
+        moduleReporting.setBackground(Color.orange);
         moduleReporting.setOpaque(true);
         moduleReporting.setBorderPainted(false);
         moduleReporting.setAlignmentX(Component.CENTER_ALIGNMENT);

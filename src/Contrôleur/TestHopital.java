@@ -29,9 +29,9 @@ public class TestHopital {
     ResultSet myRs = null;
     public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
-    MenuConnexion mconnexion = new MenuConnexion();
+   //MenuConnexion mconnexion = new MenuConnexion();
      //FenChoixAjout fen = new FenChoixAjout();
-    //FenetreRecherche fen = new FenetreRecherche();
+     FenetreRecherche fen1 = new FenetreRecherche();
     //FenChoixModule fene = new FenChoixModule();
    //FenRService fen = new FenRService();
  /** Connexion cn;

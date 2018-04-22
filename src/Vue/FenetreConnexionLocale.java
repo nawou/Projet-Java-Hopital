@@ -30,7 +30,7 @@ public class FenetreConnexionLocale extends JFrame implements ActionListener{
    
          // creation par heritage de la fenetre
         super("Gestion informatique de votre centre hospitalier");
-        setSize(800,500);  //taille
+        setSize(800,300);  //taille
         setLocationRelativeTo(null); //on centre la fenêtre
         setResizable(false); //On empêche le redimensionnement
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //pour quitter lors du clic sur la croix
@@ -66,7 +66,7 @@ public class FenetreConnexionLocale extends JFrame implements ActionListener{
                 mdp = new JLabel("Mot de passe :", JLabel.CENTER);
                 nomBDD = new JLabel("Nom de la base de données :", JLabel.CENTER);
                 messageCo = new JLabel("FORMULAIRE DE CONNEXION", JLabel.CENTER);
-                messageInfo = new JLabel("Veuillez entrer vos nom d'utilisateur, mot de passe et nom de BDD afin de vous connecter:", JLabel.CENTER);
+                messageInfo = new JLabel("Veuillez entrer vos nom d'utilisateur, mot de passe et nom de base de données afin de vous connecter:", JLabel.CENTER);
 		
                 //Mise en forme des labels
                  Font f=new Font("Arial", Font.BOLD, 16);
