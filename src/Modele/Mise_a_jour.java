@@ -47,8 +47,8 @@ public class Mise_a_jour {
        query = "DELETE FROM employe WHERE true";
      if (!nom.equals("")){query+=" AND nom ='" + nom + "'";}
      if (!prenom.equals("")){query+=" AND prenom ='" + prenom + "'";} 
-      try {System.out.println(query);
-      System.out.println(query1);
+      try {
+      
           //arr=cn.remplirChampsRequete(query);
           if(cn.remplirChampsRequete(query1).size()==0){
               JOptionPane.showMessageDialog(null,"Les informations saisies sont incorrectes");
@@ -103,8 +103,7 @@ public class Mise_a_jour {
        query = "DELETE FROM malade WHERE true";
      if (!nom.equals("")){query+=" AND nom ='" + nom + "'";}
      if (!prenom.equals("")){query+=" AND prenom ='" + prenom + "'";} 
-      try {System.out.println(query);
-      System.out.println(query1);
+      try {
           //arr=cn.remplirChampsRequete(query);
           if(cn.remplirChampsRequete(query1).size()==0){
               JOptionPane.showMessageDialog(null,"Les informations saisies sont incorrectes");
@@ -118,22 +117,52 @@ public class Mise_a_jour {
        
       }
      
-//Modifier un malade en recherchant son nom et en entrant tout le reste de ses infos 
-       public void ModifierMalade (String nomAncien, String numero, String nom, String prenom, String adresse, String tel, String mutuelle){
+      
+      
+      //Modifier un employe en recherchant son nom et en entrant tout le reste de ses infos 
+      public boolean ModifierEmploye (String nomAncien, String nom, String prenom, String adresse, String tel) throws SQLException{
      //Connexion cn = new Connexion("Hopital", "root", "root");
-     query = "UPDATE malade SET adresse='"+adresse+"' ,tel ='"+tel+ "' ,mutuelle= '"+mutuelle+"' WHERE nom='" + nomAncien+ "'" ;
+     query1 = "SELECT * FROM employe WHERE true AND nom='"+ nomAncien + "'"; 
+     query = "UPDATE employe SET nom ='"+nom+"' ,prenom ='"+prenom+"' ,adresse='"+adresse+"' ,tel ='"+tel+"' WHERE nom='" + nomAncien+ "'" ;
+     try {
+     if(cn.remplirChampsRequete(query1).size()==0){
+              JOptionPane.showMessageDialog(null,"Cet employé n'existe pas");
+              return false;}
+          //arr=cn.remplirChampsRequete(query);
+     else cn.executeUpdate(query);
+     return true;
+     }catch(SQLException e)
+      {e.printStackTrace();
+      return false;}
+    }
+     
+      
+      //Modifier un employe en recherchant son nom et en entrant tout le reste de ses infos 
+      public boolean ModifierMalade (String nomAncien, String nom, String prenom, String adresse, String tel, String mutuelle) throws SQLException{
+     //Connexion cn = new Connexion("Hopital", "root", "root");
+     query1 = "SELECT * FROM malade WHERE true AND nom='"+ nomAncien + "'"; 
+     query = "UPDATE malade SET nom ='"+nom+"' ,prenom ='"+prenom+"' ,adresse='"+adresse+"' ,tel ='"+tel+ "' ,mutuelle= '"+ mutuelle +"' WHERE nom='" + nomAncien+ "'" ;
+     try {
+     if(cn.remplirChampsRequete(query1).size()==0){
+              JOptionPane.showMessageDialog(null,"Ce patient n'existe pas");
+              return false;}
+          //arr=cn.remplirChampsRequete(query);
+     else cn.executeUpdate(query);
+     return true;
+     }catch(SQLException e)
+      {e.printStackTrace();
+      return false;}
+    }
+     
+    /*  
+///Modifier un malade en recherchant son nom et en entrant tout le reste de ses infos 
+       public void ModifierMalade (String nomAncien, String numero, String nom, String prenom, String adresse, String tel, String mutuelle) throws SQLException{
+     //Connexion cn = new Connexion("Hopital", "root", "root");
+     query = "UPDATE malade SET numero ='" + numero+"' ,nom ='"+nom+"' ,prenom ='"+prenom+"' ,adresse='"+adresse+"' ,tel ='"+tel+ "' ,mutuelle= '"+mutuelle+"' WHERE nom='" + nomAncien+ "'" ;
      try {System.out.print(query);
           //arr=cn.remplirChampsRequete(query);
           cn.executeUpdate(query);}catch(SQLException e)
       {e.printStackTrace();}
-    }
-//Modifier un malade en recherchant son nom et en entrant tout le reste de ses infos 
-       public void ModifierEmploye (String nomAncien, String numero, String nom, String prenom, String adresse, String tel){
-     //Connexion cn = new Connexion("Hopital", "root", "root");
-     query = "UPDATE malade SET numero ='adresse='"+adresse+"' ,tel ='"+tel+"' WHERE nom='" + nomAncien+ "'" ;
-     try {System.out.print(query);
-          //arr=cn.remplirChampsRequete(query);
-          cn.executeUpdate(query);}catch(SQLException e)
-      {e.printStackTrace();}
-    }
+    }*/
+
 }

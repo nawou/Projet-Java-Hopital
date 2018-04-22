@@ -55,7 +55,7 @@ public ArrayList rechercherChambre (String nb_lits, String no_chambre) throws SQ
      if (!nb_lits.equals("")){query+=" AND chambre.nb_lits ='" + nb_lits + "'";}
      if (!no_chambre.equals("")){query+=" AND chambre.no_chambre ='" + no_chambre + "'";}
     
-      try {System.out.println(query);
+      try {//System.out.println(query);
           arr=cn.remplirChampsRequete(query);}catch(SQLException e)
       {e.printStackTrace();}
       return arr;
@@ -69,7 +69,7 @@ public ArrayList rechercherChambre (String nb_lits, String no_chambre) throws SQ
      if (!nom.equals("")){query+=" AND nom ='" + nom + "'";}
      if (!prenom.equals("")){query+=" AND prenom ='" + prenom + "'";}
      
-      try {System.out.println(query);
+      try {//System.out.println(query);
       arr=cn.remplirChampsRequete(query);}catch(SQLException e)
        
       {e.printStackTrace();}
@@ -87,7 +87,7 @@ public ArrayList rechercherChambre (String nb_lits, String no_chambre) throws SQ
      
      /** query= "SELECT * FROM docteur WHERE true";
      if (!spe.equals("")){query+=" AND specialite='" + spe + "'";}  */   
-      try {System.out.println(query);
+      try {//System.out.println(query);
           arr=cn.remplirChampsRequete(query);}catch(SQLException e)
       {e.printStackTrace();}
       return arr;
@@ -104,7 +104,7 @@ public ArrayList rechercherChambre (String nb_lits, String no_chambre) throws SQ
      if (!prenom.equals("")){query+=" AND prenom ='" + prenom + "'";}
      if (!rot.equals("")){query+=" AND rotation='" + rot + "'";} //Recherche à partir d'une spe
       
-      try {System.out.println(query);
+      try {//System.out.println(query);
           arr=cn.remplirChampsRequete(query);}catch(SQLException e)
       {e.printStackTrace();}
       return arr;
@@ -117,7 +117,7 @@ public ArrayList rechercherChambre (String nb_lits, String no_chambre) throws SQ
      if (!nom.equals("")){query+=" AND nom ='" + nom + "'";}
      if (!prenom.equals("")){query+=" AND prenom ='" + prenom + "'";}
      if (!mutuelle.equals("")){query+=" AND mutuelle ='" + mutuelle + "'";}
-      try {System.out.println(query);
+      try {//System.out.println(query);
           arr=cn.remplirChampsRequete(query);}catch(SQLException e)
       {e.printStackTrace();}
       return arr;
@@ -129,7 +129,7 @@ public ArrayList rechercherChambre (String nb_lits, String no_chambre) throws SQ
      if (!nom.equals("")){query+=" AND malade.nom ='" + nom + "'";}
      if (!prenom.equals("")){query+=" AND malade.prenom ='" + prenom + "'";}
      if (!no_chambre.equals("")){query+=" AND hospitalisation.no_chambre='" + no_chambre + "'";} //Recherche à partir du numero de la chambre
-      try {System.out.println(query);
+      try {//System.out.println(query);
           arr=cn.remplirChampsRequete(query);}catch(SQLException e)
       {e.printStackTrace();}
       return arr;
@@ -143,7 +143,7 @@ public ArrayList rechercherChambre (String nb_lits, String no_chambre) throws SQ
      if (!prenom.equals("")){query+=" AND malade.prenom ='" + prenom + "'";}
      if (!nomD.equals("")){query+=" AND employe.nom ='" + nomD + "'";}
      if (!prenomD.equals("")){query+=" AND employe.prenom ='" + prenomD + "'";}
-      try {System.out.println(query);
+      try {//System.out.println(query);
           arr=cn.remplirChampsRequete(query);}catch(SQLException e)
               
       {e.printStackTrace();}

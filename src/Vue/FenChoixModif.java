@@ -9,6 +9,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -30,6 +33,8 @@ public class FenChoixModif extends javax.swing.JFrame implements ActionListener 
         getContentPane().setBackground(Color.WHITE); 
         
         Retour.addActionListener(this);
+        employe.addActionListener(this);
+        patient.addActionListener(this);
         
         Font f=new Font("Arial", Font.BOLD, 13);
         jLabel1.setFont(f);
@@ -152,6 +157,28 @@ public class FenChoixModif extends javax.swing.JFrame implements ActionListener 
        Object source = e.getSource();
        if (source==Retour){
            FenChoixModule fen = new FenChoixModule();
+           super.dispose();
+       }
+       
+       else if (source==employe){
+           try {
+               FenModifEmp fen = new FenModifEmp();
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(FenChoixModif.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (SQLException ex) {
+               Logger.getLogger(FenChoixModif.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           super.dispose();
+       }
+       
+        else if (source==patient){
+           try {
+               FenModifMal fen = new FenModifMal();
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(FenChoixModif.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (SQLException ex) {
+               Logger.getLogger(FenChoixModif.class.getName()).log(Level.SEVERE, null, ex);
+           }
            super.dispose();
        }
     }

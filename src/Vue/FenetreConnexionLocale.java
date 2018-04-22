@@ -146,7 +146,7 @@ public class FenetreConnexionLocale extends JFrame implements ActionListener{
              JOptionPane.showMessageDialog(null, "Connexion réussie !");
              FenChoixModule fen = new FenChoixModule ();}
              
-              else if((!text_BDD.equals("hopital"))||(!text_login.equals("root"))||(!text_pass.equals("root"))){
+              else if((!text_BDD.equals("Hopital"))||(!text_login.equals("root"))||(!text_pass.equals("root"))){
               
               JOptionPane.showMessageDialog(null,"Les informations saisies sont incorrectes, veuillez réessayer !");
             

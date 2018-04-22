@@ -5,17 +5,46 @@
  */
 package Vue;
 
+import Modele.Mise_a_jour;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author nawellalioui
  */
-public class FenModifEmp extends javax.swing.JFrame {
+public class FenModifEmp extends javax.swing.JFrame implements ActionListener {
 
+     private Mise_a_jour maj;
     /**
      * Creates new form FenModifEmp
      */
-    public FenModifEmp() {
+    public FenModifEmp() throws ClassNotFoundException, SQLException {
+        super("Gestion informatique de votre centre hospitalier");
         initComponents();
+        setLocationRelativeTo(null); //on centre la fenêtre
+        setResizable(false); //On empêche le redimensionnement
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //pour quitter lors du clic sur la croix
+        setVisible(true);
+        getContentPane().setBackground(Color.WHITE); 
+        
+        Retour.addActionListener(this);
+        modif.addActionListener(this);
+        
+        Font f=new Font("Arial", Font.BOLD, 13);
+        jLabel1.setFont(f);
+        jLabel3.setFont(f);
+        jLabel3.setForeground(Color.RED);
+        jLabel4.setFont(f);
+        
+         maj = new Mise_a_jour();
     }
 
     /**
@@ -28,26 +57,116 @@ public class FenModifEmp extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        Anom = new javax.swing.JTextField();
+        nom = new javax.swing.JTextField();
+        pre = new javax.swing.JTextField();
+        ad = new javax.swing.JTextField();
+        tel = new javax.swing.JTextField();
+        modif = new javax.swing.JButton();
+        Retour = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Veuillez entrer le nom de l'employé et les nouvelles informations le concernant");
+        jLabel1.setText("Veuillez entrer le nom de l'employé à modifier puis remplir tous les champs: ");
+
+        jLabel3.setText("Exemple: Si vous voulez modifier l'adresse, entrez toutes les anciennes informations mais une adresse différente");
+
+        jLabel4.setText("Nom de l'employé à modifier:");
+
+        jLabel6.setText("Nom:");
+
+        jLabel7.setText("Prénom:");
+
+        jLabel8.setText("Adresse:");
+
+        jLabel9.setText("Téléphone:");
+
+        modif.setText("Modifier");
+
+        Retour.setText("Retour");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(jLabel1)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel8))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(18, 18, 18)
+                                .addComponent(pre, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(55, 55, 55)
+                                .addComponent(jLabel9))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Anom, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(55, 55, 55)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ad, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(modif)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(jLabel1)))
+                .addContainerGap(54, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(355, 355, 355)
+                .addComponent(Retour)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel1)
-                .addContainerGap(311, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(Anom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(ad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modif)
+                    .addComponent(jLabel7)
+                    .addComponent(pre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63)
+                .addComponent(Retour)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
@@ -83,12 +202,72 @@ public class FenModifEmp extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FenModifEmp().setVisible(true);
+                try {
+                    new FenModifEmp().setVisible(true);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(FenModifEmp.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(FenModifEmp.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Anom;
+    private javax.swing.JButton Retour;
+    private javax.swing.JTextField ad;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton modif;
+    private javax.swing.JTextField nom;
+    private javax.swing.JTextField pre;
+    private javax.swing.JTextField tel;
     // End of variables declaration//GEN-END:variables
+
+public void actionPerformed(ActionEvent e) {
+       Object source = e.getSource();
+       
+       if(source == modif) { 
+           if((!Anom.getText().equals(""))&&(!nom.getText().equals(""))&&(!pre.getText().equals(""))&&(!ad.getText().equals(""))&&(!tel.getText().equals(""))){
+              
+               try {
+                   if(maj.ModifierEmploye(Anom.getText(), nom.getText(), pre.getText(), ad.getText(), tel.getText())==true) {
+                       JOptionPane.showMessageDialog(null,"employé modifié !");
+                       super.dispose();
+                       try {
+                           FenModifEmp fen = new FenModifEmp();
+                       } catch (ClassNotFoundException | SQLException ex) {
+                           Logger.getLogger(FenModifEmp.class.getName()).log(Level.SEVERE, null, ex);
+                       }
+                   }
+               } catch (SQLException ex) {
+                   Logger.getLogger(FenModifEmp.class.getName()).log(Level.SEVERE, null, ex);
+               }
+                  
+               
+               
+           }
+           
+           else {JOptionPane.showMessageDialog(null,"Tous les champs sont requis !");}
+              
+        }
+       
+        else if (source==Retour){
+           FenChoixModif fen = new FenChoixModif();
+           super.dispose();
+       }
+    
+    
+    
+   
+}
+
+
+
 }

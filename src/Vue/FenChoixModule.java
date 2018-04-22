@@ -113,6 +113,7 @@ public class FenChoixModule extends JFrame implements ActionListener {
         moduleAjouter.addActionListener(this);
         moduleMAJ.addActionListener(this);
         moduleSupprimer.addActionListener(this);
+        moduleReporting.addActionListener(this);
         
         add(p0);
         //Mise en forme des boutons
@@ -141,6 +142,10 @@ public class FenChoixModule extends JFrame implements ActionListener {
        else if(source == moduleMAJ) {
        super.dispose(); 
        FenChoixModif fen2= new FenChoixModif();
+    }
+       else if(source == moduleReporting) {
+       super.dispose(); 
+       FenChoixReporting fen2= new FenChoixReporting();
     }
                            
         

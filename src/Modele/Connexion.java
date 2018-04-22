@@ -55,13 +55,13 @@ public class Connexion {
         public Connexion(String nameDatabase, String loginDatabase, String passwordDatabase) throws SQLException, ClassNotFoundException {
         // chargement driver "com.mysql.jdbc.Driver"
         Class.forName("com.mysql.jdbc.Driver");
-        System.out.println("Driver ok");
+        //System.out.println("Driver ok");
         // url de connexion "jdbc:mysql://localhost:8889/usernameECE"
         String urlDatabase = "jdbc:mysql://localhost:8889/" + nameDatabase;
        
         //création d'une connexion JDBC à la base 
         conn = DriverManager.getConnection(urlDatabase, loginDatabase, passwordDatabase);
-        System.out.println("Connexion ok");
+        //System.out.println("Connexion ok");
        
         // création d'un ordre SQL (statement)
         stmt = conn.createStatement();
@@ -283,6 +283,32 @@ public class Connexion {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    
+   public Statement getSt(){
+       return stmt;
+   }
+   
+   public ResultSet getRs(){
+       return rset;
+   }
+   
+   public ResultSetMetaData getRSMD(){
+       return rsetMeta;
+   }
+   
+   public void setSt(Statement st){
+       stmt = st;
+   }
+   
+   public void setRs(ResultSet rs){
+       rset = rs;
+   }
+   
+   public void setRsMD(ResultSetMetaData rsMD){
+       rsetMeta = rsMD;
+   }
+   
+   
  
     
 }

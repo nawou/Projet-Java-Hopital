@@ -11,89 +11,30 @@ import Modele.Mise_a_jour;
 import Modele.Recherche;
 import Vue.FenChoixAjout;
 import Vue.FenChoixModule;
+import Vue.FenChoixReporting;
 import Vue.FenRService;
 import Vue.FenetreConnexionLocale;
 import Vue.MenuConnexion;
 import java.util.ArrayList;
 import java.util.Scanner;
 import Vue.FenetreRecherche;
+import Vue.ReportingPatient;
 
 
-/**
- *
- * @author nawellalioui
- */
+
+/** Classe principale contenant le main */
 public class TestHopital { 
     
-    Statement myStat = null;
-    ResultSet myRs = null;
+   
     public static void main(String[] args) throws SQLException, ClassNotFoundException{
     //Connexion cn = new Connexion(); 
-   //MenuConnexion mconnexion = new MenuConnexion();
-     //FenChoixAjout fen = new FenChoixAjout();
-     FenetreRecherche fen1 = new FenetreRecherche();
-    //FenChoixModule fene = new FenChoixModule();
-   //FenRService fen = new FenRService();
- /** Connexion cn;
-    cn = new Connexion("Hopital","root","");
-    MenuConnexion mconnexion = new MenuConnexion();
-    //FenetreConnexionLocale fe = new FenetreConnexionLocale();
-    //System.out.println(afficherAttribut("medecin"));
-
-   
-    */
-    //Connexion cn;
-    //cn = new Connexion("Hopital","root","root");
-
-   // MenuConnexion mconnexion = new MenuConnexion();
-    //FenetreConnexionLocale fe = new FenetreConnexionLocale();
-    //FenChoixModule fen = new FenChoixModule();
-    /*try {
-          ArrayList result = cn.remplirChampsRequete("SELECT * FROM malade;");
-          ArrayList re = cn.remplirChampsRequete("SELECT prenom, nom FROM malade WHERE mutuelle ='MAAF'");
-          ArrayList champsMalade = cn.remplirChampsTable("malade");
-          
-          for (int i = 0; i < champsMalade.size(); i++){
-              System.out.print(champsMalade.get(i));
-          }
-                    } catch (SQLException e){
-            e.printStackTrace();
-            }*/
-    /*Recherche rech = new Recherche();
-    ArrayList r = rech.rechercherService("Cardiologie");
-     for (int i = 0; i < r.size(); i++){
-              System.out.print(r.get(i));
-          }
     
-      Recherche rech = new Recherche();
-     ArrayList r = rech.rechercherChambre("101", "3");
-     for (int i = 0; i < r.size(); i++){
-              System.out.print(r.get(i));
-          }
-      
-     Recherche rech = new Recherche();
-     ArrayList r = rech.rechercherEmploye("", "Rafael");
-     for (int i = 0; i < r.size(); i++){
-              System.out.print(r.get(i));
-          }
-     
-      Recherche rech = new Recherche();
-      ArrayList r = rech.rechercherDocteur("Cardiologue");
-      for (int i = 0; i < r.size(); i++){
-              System.out.print(r.get(i));
-          }*/
-
-       /*Recherche rech = new Recherche();
-      ArrayList r = rech.rechercherInfirmier("NUIT","","");
-      for (int i = 0; i < r.size(); i++){
-              System.out.print(r.get(i));
-          }*/
-       
-        
+     //Appel du constructeur de l'interface 
+     MenuConnexion mconnexion = new MenuConnexion();
+     //ReportingPatient  p = new ReportingPatient();
+     //FenChoixReporting fen = new FenChoixReporting();
     
-      
-
-}
+    }
 }
 
 

@@ -101,6 +101,7 @@ public class MenuConnexion extends JFrame implements ActionListener{
 
     connexionLoc.addActionListener(this);
     quitter.addActionListener(this);
+    //connexionECE.addActionListener(this);
     
     return panel;
     }
@@ -112,7 +113,12 @@ public class MenuConnexion extends JFrame implements ActionListener{
        super.dispose(); 
        FenetreConnexionLocale fen = new FenetreConnexionLocale();
     }
+      /*if(source == connexionECE) {
+       super.dispose(); 
+       FenetreConnexionLocale fen = new FenetreConnexionLocale();
+    }*/
     
+       
     else if (source == quitter){
         super.dispose(); 
       
